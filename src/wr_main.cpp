@@ -271,6 +271,7 @@ undefined4 WinMain_16(HINSTANCE__ *param_1,undefined4 param_2,char *param_3)
 
 
 /* from: wr_main.cpp
+   addr: 0049C310
    addr: 0049C310 */
 
 void * __thiscall wrLVL_SYSTEM::_scalar_deleting_destructor_(wrLVL_SYSTEM *this,uint param_1)
@@ -287,6 +288,7 @@ void * __thiscall wrLVL_SYSTEM::_scalar_deleting_destructor_(wrLVL_SYSTEM *this,
 
 
 /* from: wr_main.cpp
+   addr: 0049C330
    addr: 0049C330 */
 
 void * __thiscall wrINP_SYSTEM::_scalar_deleting_destructor_(wrINP_SYSTEM *this,uint param_1)
@@ -303,6 +305,7 @@ void * __thiscall wrINP_SYSTEM::_scalar_deleting_destructor_(wrINP_SYSTEM *this,
 
 
 /* from: wr_main.cpp
+   addr: 0049C350
    addr: 0049C350 */
 
 void * __thiscall wrSND_SYSTEM::_vector_deleting_destructor_(wrSND_SYSTEM *this,uint param_1)
@@ -319,6 +322,7 @@ void * __thiscall wrSND_SYSTEM::_vector_deleting_destructor_(wrSND_SYSTEM *this,
 
 
 /* from: wr_main.cpp
+   addr: 0049C370
    addr: 0049C370 */
 
 void * __thiscall wrSHADOW_SYSTEM::_vector_deleting_destructor_(wrSHADOW_SYSTEM *this,uint param_1)
@@ -1434,6 +1438,7 @@ gssAREA * __thiscall gssWND::CreateAreaDelimiter(gssWND *this)
 
 
 /* from: wr_main.cpp
+   addr: 0049DFB0
    addr: 0049DFB0 */
 
 void * __thiscall
@@ -1451,6 +1456,7 @@ gssAREA_DELIMITER::_vector_deleting_destructor_(gssAREA_DELIMITER *this,uint par
 
 
 /* from: wr_main.cpp
+   addr: 0049DFD0
    addr: 0049DFD0 */
 
 void * __thiscall gssWND_RENDER::_scalar_deleting_destructor_(gssWND_RENDER *this,uint param_1)
@@ -1549,6 +1555,7 @@ void * __thiscall uiFONT_MANAGER::_scalar_deleting_destructor_(uiFONT_MANAGER *t
 
 
 /* from: wr_main.cpp
+   addr: 0049E110
    addr: 0049E110 */
 
 void * __thiscall wrWND_MENU::_vector_deleting_destructor_(wrWND_MENU *this,uint param_1)
@@ -1566,6 +1573,7 @@ void * __thiscall wrWND_MENU::_vector_deleting_destructor_(wrWND_MENU *this,uint
 
 
 /* from: wr_main.cpp
+   addr: 0049E140
    addr: 0049E140 */
 
 void * __thiscall wrSTAT_SYSTEM::_vector_deleting_destructor_(wrSTAT_SYSTEM *this,uint param_1)
