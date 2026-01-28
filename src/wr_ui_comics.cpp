@@ -1182,11 +1182,6 @@ void __thiscall fioFILE::fioFILE(fioFILE *this)
 
 
 /* from: wr_ui_comics.cpp
-   addr: 00487630
-   addr: 00487630
-   addr: 00487630
-   addr: 00487630
-   addr: 00487630
    addr: 00487630 */
 
 void * __thiscall fioFILE_MEM::_scalar_deleting_destructor_(fioFILE_MEM *this,uint param_1)
@@ -1198,4 +1193,5 @@ void * __thiscall fioFILE_MEM::_scalar_deleting_destructor_(fioFILE_MEM *this,ui
   }
   return this;
 }
+
 
