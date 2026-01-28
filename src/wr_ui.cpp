@@ -1,5 +1,3 @@
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: wr_ui.cpp
    addr: 004804B0 */
 
@@ -1542,59 +1540,6 @@ void __thiscall wrUI_SYSTEM::GetNextMpLevel(wrUI_SYSTEM *this,char *param_1,int 
 
 
 /* from: wr_ui.cpp
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
-   addr: 004820F0
    addr: 004820F0 */
 
 void * __thiscall
@@ -1817,77 +1762,6 @@ int __fastcall _uiGetLevelNameStrId(char *param_1,int *param_2,int *param_3,int 
 
 
 /* from: wr_ui.cpp
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
-   addr: 00482420
    addr: 00482420 */
 
 void * __thiscall
@@ -2719,9 +2593,6 @@ LAB_00482f98:
 
 
 /* from: wr_ui.cpp
-   addr: 00482FB0
-   addr: 00482FB0
-   addr: 00482FB0
    addr: 00482FB0 */
 
 void * __thiscall
@@ -3223,8 +3094,6 @@ wrUI_WINDOW_SCROLL<struct_wrUI_VIDEO_RECORD,class_wrUI_VIDEO_INFO>::SetSelectedR
 
 
 /* from: wr_ui.cpp
-   addr: 00483760
-   addr: 00483760
    addr: 00483760 */
 
 void __thiscall
@@ -3424,9 +3293,6 @@ wrUI_WINDOW_SCROLL<struct_wrUI_VIDEO_RECORD,class_wrUI_VIDEO_INFO>::OnChildNotif
 
 
 /* from: wr_ui.cpp
-   addr: 004839D0
-   addr: 004839D0
-   addr: 004839D0
    addr: 004839D0 */
 
 void * __thiscall
@@ -4379,7 +4245,6 @@ uiELEMENT * __fastcall wrUI_JOIN_WINDOW::Create(void)
 
 
 
-
 /* from: wr_ui.cpp
    addr: 004845D0 */
 
@@ -4426,7 +4291,6 @@ wrUI_WINDOW_SCROLL<struct_wrUI_JOIN_RECORD,class_wrUI_JOIN_INFO>::ProcessInit
   *(uint *)(this + 4) = *(uint *)(this + 4) | 0x40c;
   return 1;
 }
-
 
 
 
@@ -4778,45 +4642,6 @@ uiELEMENT * __fastcall wrUI_SI_PLAYER_INFO::Create(void)
 
 
 /* from: wr_ui.cpp
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
-   addr: 00484BA0
    addr: 00484BA0 */
 
 void * __thiscall wrUI_VIDEO_INFO::_scalar_deleting_destructor_(wrUI_VIDEO_INFO *this,uint param_1)
@@ -5442,7 +5267,6 @@ uiELEMENT * __fastcall wrUI_ADVSERV_WINDOW::Create(void)
 
 
 /* from: wr_ui.cpp
-   addr: 00485490
    addr: 00485490 */
 
 int __thiscall
@@ -5723,8 +5547,6 @@ wrUI_WINDOW_SCROLL<struct_wrUI_ADVSERV_RECORD,class_wrUI_ADVSERV_INFO>::OnScroll
 
 
 /* from: wr_ui.cpp
-   addr: 00485940
-   addr: 00485940
    addr: 00485940 */
 
 int __thiscall
@@ -5742,8 +5564,6 @@ wrUI_WINDOW_SCROLL<class_wrUI_CTRL_RECORD,class_wrUI_CTRL_INFO>::OnKbdFocus
 
 
 /* from: wr_ui.cpp
-   addr: 00485960
-   addr: 00485960
    addr: 00485960 */
 
 void __thiscall
@@ -5835,9 +5655,6 @@ wrUI_WINDOW_SCROLL<struct_wrUI_ADVSERV_RECORD,class_wrUI_ADVSERV_INFO>::UpdateCo
 
 
 /* from: wr_ui.cpp
-   addr: 00485A70
-   addr: 00485A70
-   addr: 00485A70
    addr: 00485A70 */
 
 void * __thiscall
@@ -5871,7 +5688,6 @@ wrUI_WINDOW_SCROLL<struct_wrUI_ADVSERV_RECORD,class_wrUI_ADVSERV_INFO>::_vector_
 
 
 /* from: wr_ui.cpp
-   addr: 00485AC0
    addr: 00485AC0 */
 
 int __thiscall
@@ -6001,4 +5817,5 @@ uiELEMENT * __fastcall wrUI_COMICS_FRAME::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
