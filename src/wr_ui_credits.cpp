@@ -24,7 +24,6 @@ wrUI_CR_FRAME * __thiscall wrUI_CR_FRAME::wrUI_CR_FRAME(wrUI_CR_FRAME *this)
 
 
 /* from: wr_ui_credits.cpp
-   addr: 004876B0
    addr: 004876B0 */
 
 void * __thiscall wrUI_CR_FRAME::_vector_deleting_destructor_(wrUI_CR_FRAME *this,uint param_1)
@@ -290,4 +289,5 @@ void __thiscall wrUI_CR_BACK::ProcessCommand(wrUI_CR_BACK *this)
   wrUI_BUTTON::ProcessCommand((wrUI_BUTTON *)this);
   return;
 }
+
 
