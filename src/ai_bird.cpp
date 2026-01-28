@@ -1038,9 +1038,6 @@ LAB_00433e85:
 
 
 /* from: ai_bird.cpp
-   addr: 00433EC0
-   addr: 00433EC0
-   addr: 00433EC0
    addr: 00433EC0 */
 
 void * __thiscall scnDOMAIN::_scalar_deleting_destructor_(scnDOMAIN *this,uint param_1)
@@ -1070,7 +1067,6 @@ int __thiscall aiBIRD::IsAnimSeqGoodForFallback(aiBIRD *this)
 
 
 /* from: ai_bird.cpp
-   addr: 00433F10
    addr: 00433F10 */
 
 void * __thiscall aiBIRD::_scalar_deleting_destructor_(aiBIRD *this,uint param_1)
@@ -1084,4 +1080,5 @@ void * __thiscall aiBIRD::_scalar_deleting_destructor_(aiBIRD *this,uint param_1
   }
   return this;
 }
+
 
