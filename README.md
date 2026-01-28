@@ -8,5 +8,11 @@ An attempt to reconstruct source code via reverse-engineering from an earlier Wi
 
 ## Goals
 - Map decompiled code to the original source structure.  
-- Reconstruct class layouts, offsets, and method relationships.  
+- Reconstruct class layouts, offsets, and method relationships (.cpp, .h).  
 - Eventually produce a fully compilable build for research/modding purposes.
+
+## Contributions
+Help is always welcome, especially with:
+- Renaming offsets and variables
+- Reconstructing class layouts
+- Matching functions to original source file structure
