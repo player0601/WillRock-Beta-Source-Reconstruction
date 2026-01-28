@@ -1055,7 +1055,6 @@ LAB_0043cb40:
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_cyclop.cpp
    addr: 0043CB70 */
 
@@ -1143,12 +1142,7 @@ void __thiscall aiCYCLOP::SetMovementSpeed(aiCYCLOP *this)
 
 
 
-
-/* WARNING: Removing unreachable block (ram,0x0043cf87) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* from: ai_cyclop.cpp
-   addr: 0043CD80
    addr: 0043CD80 */
 
 void __thiscall aiCYCLOP::ClampGoalFrame(aiCYCLOP *this,float param_1,m3dV *param_2,m3dV *param_3)
@@ -1546,4 +1540,5 @@ int __thiscall aiCYCLOP_REFINE::IsInclObj(aiCYCLOP_REFINE *this,objOBJ *param_1)
   iVar1 = aiCDT_REFINE::IsInclObj((aiCDT_REFINE *)this,param_1);
   return iVar1;
 }
+
 
