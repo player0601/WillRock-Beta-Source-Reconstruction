@@ -1,5 +1,5 @@
 # Will Rock Beta Source Reconstruction
-An attempt to reconstruct source code from an earlier Will Rock beta build that was compiled on Friday, February 21, 2003 at 09:31:01.
+An attempt to reconstruct source code via reverse-engineering from an earlier Will Rock beta build that was compiled on Friday, February 21, 2003 at 09:31:01.
 
 ## Project Status
 - Many functions are decompiled but **offsets may need renaming**.  
