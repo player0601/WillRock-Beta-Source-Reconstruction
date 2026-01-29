@@ -13,7 +13,6 @@ int __fastcall doorInit(void)
 
 
 
-
 /* from: gs_shared:door.cpp
    addr: 00543B40 */
 
@@ -125,7 +124,6 @@ int __thiscall doorDOOR::ProcessINIT(doorDOOR *this)
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: gs_shared:door.cpp
    addr: 00543E60 */
 
@@ -233,7 +231,6 @@ LAB_0054401f:
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: gs_shared:door.cpp
    addr: 00544120 */
 
@@ -441,7 +438,6 @@ int __thiscall doorDOOR::IsReadyOpen(doorDOOR *this)
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: gs_shared:door.cpp
    addr: 00544680 */
 
@@ -476,7 +472,6 @@ int __thiscall doorDOOR::IsPlrBeforeDoor(doorDOOR *this,plgsACTION *param_1)
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: gs_shared:door.cpp
    addr: 00544710 */
 
@@ -523,8 +518,6 @@ void __thiscall doorDOOR::ProcessMP_NOTIFY(doorDOOR *this,gsEVENT *param_1)
 
 
 
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: gs_shared:door.cpp
    addr: 005447F0 */
 
@@ -532,8 +525,6 @@ void __thiscall doorDOOR::ProcessMP_GET_SYNC_DATA(doorDOOR *this,void *param_1)
 
 {
   undefined *puVar1;
-  
-                    /* WARNING: Load size is inaccurate */
   puVar1 = *param_1;
   if (puVar1 == (undefined *)0x0) {
     if ((DAT_0096343c & 1) == 0) {
@@ -559,8 +550,6 @@ void __thiscall doorDOOR::ProcessMP_GET_SYNC_DATA(doorDOOR *this,void *param_1)
 
 
 /* from: gs_shared:door.cpp
-   addr: 00544880
-   addr: 00544880
    addr: 00544880 */
 
 void __thiscall bttnBUTTON::ProcessMP_WRITE_SYNC_DATA(bttnBUTTON *this,gsMSG_MP_SAVELOAD *param_1)
@@ -730,4 +719,5 @@ entENTITY * __fastcall doorDOOR::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
