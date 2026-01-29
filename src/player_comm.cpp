@@ -1,4 +1,3 @@
-
 /* from: player_comm.cpp
    addr: 00422A70 */
 
@@ -2507,7 +2506,6 @@ sncSOUND_DESCR_3D::sncSOUND_DESCR_3D
 
 
 /* from: player_comm.cpp
-   addr: 004262F0
    addr: 004262F0 */
 
 void __thiscall objSPLIT_UNSHARED::objSPLIT_UNSHARED(objSPLIT_UNSHARED *this)
@@ -2592,4 +2590,3 @@ void __thiscall plrSYNC_DATA::plrSYNC_DATA(plrSYNC_DATA *this)
   *(undefined2 *)(this + 2) = 0x180;
   return;
 }
-
