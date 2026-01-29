@@ -1,4 +1,3 @@
-
 /* from: pwp_opp_sfx.cpp
    addr: 00415E40 */
 
@@ -2512,7 +2511,6 @@ entENTITY * __fastcall pwpOPP_SFX::Create(animINST *param_1)
 
 
 /* from: pwp_opp_sfx.cpp
-   addr: 00419810
    addr: 00419810 */
 
 void * __thiscall pwpOPP_SFX::_scalar_deleting_destructor_(pwpOPP_SFX *this,uint param_1)
@@ -2525,4 +2523,3 @@ void * __thiscall pwpOPP_SFX::_scalar_deleting_destructor_(pwpOPP_SFX *this,uint
   }
   return this;
 }
-
