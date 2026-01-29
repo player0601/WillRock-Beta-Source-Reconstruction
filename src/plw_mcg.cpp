@@ -1,4 +1,3 @@
-
 /* from: plw_mcg.cpp
    addr: 0040E5D0 */
 
@@ -420,4 +419,3 @@ entENTITY * __fastcall pwpMACHINEGUN::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
