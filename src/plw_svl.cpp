@@ -1,4 +1,3 @@
-
 /* from: plw_svl.cpp
    addr: 00413970 */
 
@@ -75,7 +74,6 @@ entENTITY * __fastcall pwpSVL_HIT::Create(animINST *param_1)
 
 
 /* from: plw_svl.cpp
-   addr: 00413AE0
    addr: 00413AE0 */
 
 void * __thiscall pwpSVL_HIT::_scalar_deleting_destructor_(pwpSVL_HIT *this,uint param_1)
@@ -1061,4 +1059,3 @@ entENTITY * __fastcall pwpSHOVEL::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
