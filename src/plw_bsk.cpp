@@ -1,4 +1,3 @@
-
 /* from: plw_bsk.cpp
    addr: 00407E20 */
 
@@ -788,9 +787,6 @@ void __thiscall pwpBSK_BULLET::ShowCollisSFX(pwpBSK_BULLET *this,pjlEV_CDT *para
 
 
 /* from: plw_bsk.cpp
-   addr: 00409130
-   addr: 00409130
-   addr: 00409130
    addr: 00409130 */
 
 void * __thiscall
@@ -1052,4 +1048,3 @@ entENTITY * __fastcall pwpBASOOKA::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
