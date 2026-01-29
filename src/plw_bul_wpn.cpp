@@ -1,4 +1,3 @@
-
 /* from: plw_bul_wpn.cpp
    addr: 004097D0 */
 
@@ -71,7 +70,6 @@ entENTITY * __fastcall pwpMCG_HIT::Create(animINST *param_1)
 
 
 /* from: plw_bul_wpn.cpp
-   addr: 00409930
    addr: 00409930 */
 
 void * __thiscall pwpMCG_HIT::_scalar_deleting_destructor_(pwpMCG_HIT *this,uint param_1)
@@ -377,7 +375,6 @@ pwpBULLET_WPN::PrepareShootMsg(pwpBULLET_WPN *this,pwpMCG_SHOOT *param_1,cdtINFO
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: plw_bul_wpn.cpp
    addr: 00409EB0 */
 
@@ -1502,4 +1499,3 @@ void __thiscall pwpEV_CDT_MCG::pwpEV_CDT_MCG(pwpEV_CDT_MCG *this)
   *(undefined2 *)(this + 2) = 0x30;
   return;
 }
-
