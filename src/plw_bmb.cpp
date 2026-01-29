@@ -1,4 +1,3 @@
-
 /* from: plw_bmb.cpp
    addr: 00406410 */
 
@@ -81,7 +80,6 @@ entENTITY * __fastcall pwpBMB_PJL::Create(animINST *param_1)
 
 
 /* from: plw_bmb.cpp
-   addr: 004065B0
    addr: 004065B0 */
 
 void * __thiscall pwpBMB_PJL::_scalar_deleting_destructor_(pwpBMB_PJL *this,uint param_1)
@@ -122,7 +120,6 @@ entENTITY * __fastcall pwpBMB_PJL_EXPL::Create(animINST *param_1)
 
 
 /* from: plw_bmb.cpp
-   addr: 00406630
    addr: 00406630 */
 
 void * __thiscall pwpBMB_PJL_EXPL::_scalar_deleting_destructor_(pwpBMB_PJL_EXPL *this,uint param_1)
@@ -962,7 +959,6 @@ pwpBMB_PJL_EXPL::ProcessMsg
   local_1c = 1;
   local_20 = &m3dBOX::_vftable_;
   if (param_1 == 1) {
-                    /* WARNING: Load size is inaccurate */
     fVar2 = *param_2;
     *(uint *)(*(int *)(this + 0xbc) + 4) = *(uint *)(*(int *)(this + 0xbc) + 4) | 0x10;
     objOBJ::SetStateYes(*(objOBJ **)(*(int *)(this + 0xbc) + 0x10),0x10);
@@ -1120,4 +1116,3 @@ entENTITY * __fastcall pwpBOMB::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
