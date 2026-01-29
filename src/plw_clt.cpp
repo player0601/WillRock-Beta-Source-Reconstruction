@@ -1,4 +1,3 @@
-
 /* from: plw_clt.cpp
    addr: 0040B850 */
 
@@ -283,7 +282,6 @@ int __thiscall pwpCOLT::SetupAniSystem(pwpCOLT *this)
 
 
 /* from: plw_clt.cpp
-   addr: 0040BF30
    addr: 0040BF30 */
 
 int __thiscall pwpCOLT::GetCurAnimSeq(pwpCOLT *this)
@@ -394,4 +392,3 @@ entENTITY * __fastcall pwpCOLT::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
