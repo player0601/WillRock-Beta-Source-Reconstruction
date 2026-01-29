@@ -1,4 +1,3 @@
-
 /* from: plw_mng.cpp
    addr: 00410980 */
 
@@ -119,7 +118,6 @@ pwpMNG_SHELL::pwpMNG_SHELL
 
 
 /* from: plw_mng.cpp
-   addr: 00410CA0
    addr: 00410CA0 */
 
 void * __thiscall pwpMNG_SHELL::_scalar_deleting_destructor_(pwpMNG_SHELL *this,uint param_1)
@@ -313,7 +311,6 @@ pwpMNG_SMOKE * __thiscall pwpMNG_SMOKE::pwpMNG_SMOKE(pwpMNG_SMOKE *this,float pa
 
 
 /* from: plw_mng.cpp
-   addr: 00411170
    addr: 00411170 */
 
 void * __thiscall pwpMNG_SMOKE::_scalar_deleting_destructor_(pwpMNG_SMOKE *this,uint param_1)
@@ -442,7 +439,6 @@ int __thiscall pwpMINIGUN::CreateMngFlare(pwpMINIGUN *this)
 
 
 /* from: plw_mng.cpp
-   addr: 00411480
    addr: 00411480 */
 
 void * __thiscall
@@ -1477,47 +1473,5 @@ entENTITY * __fastcall pwpMINIGUN::Create(animINST *param_1)
     return (entENTITY *)this;
   }
   return (entENTITY *)0x0;
-}
-
-
-
-
-/* from: plw_mng.cpp
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0
-   addr: 004129D0 */
-
-void * __thiscall pwpCROSSBOW::_scalar_deleting_destructor_(pwpCROSSBOW *this,uint param_1)
-
-{
-  *(undefined ***)this = &pwpWEAPON::_vftable_;
-  wpnWEAPON::~wpnWEAPON((wpnWEAPON *)this);
-  if ((param_1 & 1) != 0) {
-    operator_delete(this);
-  }
-  return this;
 }
 
