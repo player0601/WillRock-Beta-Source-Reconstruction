@@ -897,7 +897,6 @@ plrPOWERUP_EMITTER::plrPOWERUP_EMITTER(plrPOWERUP_EMITTER *this,float param_1)
 
 
 /* from: player_mp.cpp
-   addr: 004277F0
    addr: 004277F0 */
 
 void * __thiscall plrPLAYER_MP::_vector_deleting_destructor_(plrPLAYER_MP *this,uint param_1)
@@ -910,4 +909,5 @@ void * __thiscall plrPLAYER_MP::_vector_deleting_destructor_(plrPLAYER_MP *this,
   }
   return this;
 }
+
 
