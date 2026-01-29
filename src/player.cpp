@@ -1,5 +1,3 @@
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: player.cpp
    addr: 0041A680 */
 
@@ -267,7 +265,6 @@ entENTITY * __fastcall plrPLAYER::Create(animINST *param_1)
 
 
 /* from: player.cpp
-   addr: 0041AB50
    addr: 0041AB50 */
 
 void * __thiscall plrPLAYER::_vector_deleting_destructor_(plrPLAYER *this,uint param_1)
@@ -2847,15 +2844,6 @@ void __thiscall m3dSPHERE::GetCenter(m3dSPHERE *this,m3dV *param_1)
 
 
 /* from: player.cpp
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
-   addr: 0041F110
    addr: 0041F110 */
 
 void * __thiscall m3dSPHERE::_scalar_deleting_destructor_(m3dSPHERE *this,uint param_1)
@@ -5300,4 +5288,3 @@ void __thiscall plrPLAYER::GetSpeed(plrPLAYER *this,m3dV *param_1)
   *(undefined4 *)(param_1 + 8) = *(undefined4 *)(this + 0x2ff);
   return;
 }
-
