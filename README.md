@@ -13,6 +13,5 @@ An attempt to reconstruct source code via reverse-engineering from an earlier Wi
 
 ## Contributions
 Help is always welcome, especially with:
-- Renaming offsets and variables
-- Reconstructing class layouts
-- Matching functions to original source file structure
+- Renaming offsets and variables.
+- Reconstructing class layouts.
