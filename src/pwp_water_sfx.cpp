@@ -1,4 +1,3 @@
-
 /* from: pwp_water_sfx.cpp
    addr: 00419840 */
 
@@ -585,4 +584,3 @@ void * __thiscall pwpWSFX_EXPL::_vector_deleting_destructor_(pwpWSFX_EXPL *this,
   }
   return this;
 }
-
