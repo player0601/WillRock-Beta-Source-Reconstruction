@@ -1,4 +1,3 @@
-
 /* from: plw_mdg.cpp
    addr: 0040EDD0 */
 
@@ -606,9 +605,6 @@ void __thiscall pwpMEDUSA_PJL::ShowCollisSFX(pwpMEDUSA_PJL *this,pjlEV_CDT *para
 
 
 
-/* WARNING: Removing unreachable block (ram,0x0040fe25) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* from: plw_mdg.cpp
    addr: 0040FB60 */
 
@@ -1061,9 +1057,6 @@ pwpMDG_SHOOT_EXPLODE_EMITTER::pwpMDG_SHOOT_EXPLODE_EMITTER
 
 
 /* from: plw_mdg.cpp
-   addr: 004105A0
-   addr: 004105A0
-   addr: 004105A0
    addr: 004105A0 */
 
 void * __thiscall
@@ -1122,7 +1115,6 @@ pjlPJL<struct_pwpMDG_PJL_SFX>::ProcessINIT(pjlPJL<struct_pwpMDG_PJL_SFX> *this,p
 
 
 /* from: plw_mdg.cpp
-   addr: 00410680
    addr: 00410680 */
 
 void __thiscall pjlPJL<struct_pwpAMG_PJL_SFX>::ProcessTERM(pjlPJL<struct_pwpAMG_PJL_SFX> *this)
@@ -1149,7 +1141,6 @@ void __thiscall pjlPJL<struct_pwpAMG_PJL_SFX>::ProcessTERM(pjlPJL<struct_pwpAMG_
 
 
 /* from: plw_mdg.cpp
-   addr: 004106E0
    addr: 004106E0 */
 
 void __thiscall m3dSPL_QUAT::GetKpValue(m3dSPL_QUAT *this,int param_1,void *param_2)
@@ -1174,7 +1165,6 @@ void __thiscall m3dSPL_QUAT::GetKpValue(m3dSPL_QUAT *this,int param_1,void *para
 
 
 /* from: plw_mdg.cpp
-   addr: 00410720
    addr: 00410720 */
 
 void __thiscall m3dSPL_QUAT::SetKpValue(m3dSPL_QUAT *this,int param_1,void *param_2)
@@ -1188,7 +1178,6 @@ void __thiscall m3dSPL_QUAT::SetKpValue(m3dSPL_QUAT *this,int param_1,void *para
     iVar2 = param_1;
   }
   puVar1 = (undefined4 *)(*(int *)(this + 0x18) * iVar2 + 4 + *(int *)(this + 0x24));
-                    /* WARNING: Load size is inaccurate */
   *puVar1 = *param_2;
   puVar1[1] = *(undefined4 *)((int)param_2 + 4);
   puVar1[2] = *(undefined4 *)((int)param_2 + 8);
@@ -1216,7 +1205,6 @@ void __thiscall m3dCTRL_COLOR::SetValue(m3dCTRL_COLOR *this,m3dCOLOR *param_1)
 
 
 /* from: plw_mdg.cpp
-   addr: 00410780
    addr: 00410780 */
 
 void * __thiscall
@@ -1257,4 +1245,3 @@ entENTITY * __fastcall pwpMEDUSA::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
