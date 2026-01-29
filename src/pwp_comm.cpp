@@ -1,4 +1,3 @@
-
 /* from: pwp_comm.cpp
    addr: 00415170 */
 
@@ -599,4 +598,3 @@ int __thiscall pwpWEAPON::IsEmpty(pwpWEAPON *this)
   }
   return 0;
 }
-
