@@ -1,4 +1,3 @@
-
 /* from: plw_acd.cpp
    addr: 00401180 */
 
@@ -92,7 +91,6 @@ entENTITY * __fastcall pwpACD_EXPLOSION::Create(animINST *param_1)
 
 
 /* from: plw_acd.cpp
-   addr: 00401320
    addr: 00401320 */
 
 void * __thiscall
@@ -1399,9 +1397,6 @@ pwpACD_EXPLOSION::ProcessMsg
 
 
 /* from: plw_acd.cpp
-   addr: 00403050
-   addr: 00403050
-   addr: 00403050
    addr: 00403050 */
 
 void * __thiscall pwpACD_PJL::_vector_deleting_destructor_(pwpACD_PJL *this,uint param_1)
@@ -1595,8 +1590,6 @@ void __thiscall m3dSPL::m3dSPL(m3dSPL *this,int param_1,int param_2,int param_3)
 
 
 /* from: plw_acd.cpp
-   addr: 004033A0
-   addr: 004033A0
    addr: 004033A0 */
 
 void __thiscall m3dSPL_LINEAR1D::GetKpValue(m3dSPL_LINEAR1D *this,int param_1,void *param_2)
@@ -1617,7 +1610,6 @@ void __thiscall m3dSPL_LINEAR1D::GetKpValue(m3dSPL_LINEAR1D *this,int param_1,vo
 
 
 /* from: plw_acd.cpp
-   addr: 004033D0
    addr: 004033D0 */
 
 void __thiscall m3dSPL_LINEAR1D::SetKpValue(m3dSPL_LINEAR1D *this,int param_1,void *param_2)
@@ -1638,25 +1630,6 @@ void __thiscall m3dSPL_LINEAR1D::SetKpValue(m3dSPL_LINEAR1D *this,int param_1,vo
 
 
 /* from: plw_acd.cpp
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
-   addr: 00403400
    addr: 00403400 */
 
 void * __thiscall m3dSPL::_scalar_deleting_destructor_(m3dSPL *this,uint param_1)
@@ -1727,7 +1700,6 @@ void __thiscall m3dCTRL_3D::SetValue(m3dCTRL_3D *this,m3dV *param_1)
 
 
 /* from: plw_acd.cpp
-   addr: 004034C0
    addr: 004034C0 */
 
 void * __thiscall m3dCTRL_1D_SPL::_scalar_deleting_destructor_(m3dCTRL_1D_SPL *this,uint param_1)
@@ -1967,4 +1939,3 @@ void __thiscall pwpWEAPON::AdvanceAnimation(pwpWEAPON *this,int param_1,float pa
              param_1,param_2 * *(float *)(this + 0x1a7));
   return;
 }
-
