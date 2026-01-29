@@ -1,4 +1,3 @@
-
 /* from: plw_amg.cpp
    addr: 004039F0 */
 
@@ -97,7 +96,6 @@ entENTITY * __fastcall pwpAMG_PJL_EXPL::Create(animINST *param_1)
 
 
 /* from: plw_amg.cpp
-   addr: 00403BB0
    addr: 00403BB0 */
 
 void * __thiscall pwpAMG_PJL_EXPL::_vector_deleting_destructor_(pwpAMG_PJL_EXPL *this,uint param_1)
@@ -699,7 +697,6 @@ void __thiscall pwpATOMICGUN::ProcessSHOOT(pwpATOMICGUN *this,void *param_1)
 
 
 /* from: plw_amg.cpp
-   addr: 00404A20
    addr: 00404A20 */
 
 int __thiscall pwpMINIGUN::GetCurAnimSeq(pwpMINIGUN *this)
@@ -1669,9 +1666,6 @@ void __thiscall pwpATOMICGUN::Enable(pwpATOMICGUN *this,int param_1)
 
 
 /* from: plw_amg.cpp
-   addr: 00405FA0
-   addr: 00405FA0
-   addr: 00405FA0
    addr: 00405FA0 */
 
 void * __thiscall pwpAMG_PJL::_scalar_deleting_destructor_(pwpAMG_PJL *this,uint param_1)
@@ -1753,17 +1747,6 @@ void __thiscall pjlPJL<struct_pwpAMG_PJL_SFX>::ProcessFRAME(pjlPJL<struct_pwpAMG
 
 
 /* from: plw_amg.cpp
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
-   addr: 004060F0
    addr: 004060F0 */
 
 void __thiscall
@@ -1783,7 +1766,6 @@ pjlPJL<struct_pjlARROW_GENERIC_SFX>::Terminate(pjlPJL<struct_pjlARROW_GENERIC_SF
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: plw_amg.cpp
-   addr: 00406130
    addr: 00406130 */
 
 void __thiscall
@@ -1836,11 +1818,6 @@ void __thiscall msgDATA::msgDATA(msgDATA *this)
 
 
 /* from: plw_amg.cpp
-   addr: 00406210
-   addr: 00406210
-   addr: 00406210
-   addr: 00406210
-   addr: 00406210
    addr: 00406210 */
 
 void * __thiscall sncCHANNEL::_vector_deleting_destructor_(sncCHANNEL *this,uint param_1)
@@ -1884,4 +1861,3 @@ entENTITY * __fastcall pwpATOMICGUN::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
