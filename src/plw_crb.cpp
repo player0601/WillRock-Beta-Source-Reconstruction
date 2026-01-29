@@ -1525,6 +1525,24 @@ void __thiscall gsEVENT::gsEVENT(gsEVENT *this)
 
 
 /* from: plw_crb.cpp
+   addr: 004129D0 */
+
+void * __thiscall pwpCROSSBOW::_scalar_deleting_destructor_(pwpCROSSBOW *this,uint param_1)
+
+{
+  *(undefined ***)this = &pwpWEAPON::_vftable_;
+  wpnWEAPON::~wpnWEAPON((wpnWEAPON *)this);
+  if ((param_1 & 1) != 0) {
+    operator_delete(this);
+  }
+  return this;
+}
+
+
+
+
+
+/* from: plw_crb.cpp
    addr: 0040E570 */
 
 entENTITY * __fastcall pwpCROSSBOW::Create(animINST *param_1)
@@ -1545,4 +1563,5 @@ entENTITY * __fastcall pwpCROSSBOW::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
