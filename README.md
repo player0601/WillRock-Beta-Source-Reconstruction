@@ -7,8 +7,8 @@ An attempt to reconstruct source code via reverse-engineering from an earlier Wi
 - Some structures, classes, and scripts are **incomplete** or **missing**.
 
 ## Goals
-- Map decompiled code to the original source structure.  
-- Reconstruct class layouts, offsets, and method relationships (.cpp, .h).  
+- Map decompiled code to the original source structure (.cpp, .h).  
+- Reconstruct class layouts, offsets, and method relationships.  
 - Eventually produce a fully compilable build for research/modding purposes.
 
 ## Contributions
