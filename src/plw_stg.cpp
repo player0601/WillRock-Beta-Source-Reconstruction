@@ -1,4 +1,3 @@
-
 /* from: plw_stg.cpp
    addr: 00412B60 */
 
@@ -692,4 +691,3 @@ entENTITY * __fastcall pwpSTG::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
