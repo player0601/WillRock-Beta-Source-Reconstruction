@@ -1,7 +1,7 @@
 # About Will Rock Beta Source Reconstruction
 - Will Rock is a first‑person shooter developed by Saber Interactive and released in 2003, built on Saber’s in‑house Saber3D engine.
 - An attempt is made to reconstruct source code via reverse-engineering from an earlier Will Rock beta build that was compiled on Friday, February 21, 2003 at 09:31:01.
-- The demo beta is publicly available [here](https://archive.org/details/WillRock_201403).
+- The demo beta can be publicly available [here](https://archive.org/details/WillRock_201403).
 
 ## Project Status
 - Many functions are decompiled but **offsets may need renaming**.  
