@@ -12,23 +12,23 @@
 /* from: ai_satyr.cpp
    addr: 0044D780 */
 
-void __cdecl InitSatyrSounds(void)
+void InitSatyrSounds(void)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
+  undefined4 value1;
+  undefined4 value2;
   
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c920,satyr_beeing_hit,0,0x40000,0.0,0)
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c920, satyr_beeing_hit, 0, 0x40000, 0.0f, 0)
   ;
   _DAT_0060c980 = 0;
   _DAT_0060c984 = 0;
   _DAT_0060c920 = &sncSOUND_DESCR_3D::_vftable_;
   sncSOUND_DESCR::sncSOUND_DESCR
-            ((sncSOUND_DESCR *)&DAT_0060c988,satyr_arrow_hit_body,0,0x40000,0.0,0);
+            ((sncSOUND_DESCR *)&DAT_0060c988, satyr_arrow_hit_body, 0, 0x40000, 0.0f, 0);
   _DAT_0060c9e8 = 0;
   _DAT_0060c9ec = 0;
   _DAT_0060c988 = &sncSOUND_DESCR_3D::_vftable_;
-  apNAME::SetName((apNAME *)&DAT_0060c9f4,satyr_death);
+  apNAME::SetName((apNAME *)&DAT_0060c9f4, satyr_death);
   _DAT_0060ca34 = 0x40000;
   _DAT_0060ca38 = 0;
   _DAT_0060ca3c = 0;
@@ -39,17 +39,17 @@ void __cdecl InitSatyrSounds(void)
   _DAT_0060ca50 = 0;
   _DAT_0060ca54 = 0;
   _DAT_0060c9f0 = &sncSOUND_DESCR_3D::_vftable_;
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060ca58,mino_death_1,0,0x40000,0.0,0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060ca58, mino_death_1, 0, 0x40000, 0.0f, 0);
   _DAT_0060cab8 = 0;
   _DAT_0060cabc = 0;
   _DAT_0060ca58 = &sncSOUND_DESCR_3D::_vftable_;
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cac0,satyr_run,0,0x40000,0.0,0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cac0, satyr_run, 0, 0x40000, 0.0f, 0);
   _DAT_0060cb20 = 0;
   _DAT_0060cb24 = 0;
   _DAT_0060cac0 = &sncSOUND_DESCR_3D::_vftable_;
-  apNAME::SetName((apNAME *)&DAT_0060cb2c,satyr_shot_arrow);
-  uVar2 = DAT_005d3fa0;
-  uVar1 = DAT_005d3f9c;
+  apNAME::SetName((apNAME *)&DAT_0060cb2c, satyr_shot_arrow);
+  value2 = DAT_005d3fa0;
+  value1 = DAT_005d3f9c;
   _DAT_0060cb6c = 0x40000;
   _DAT_0060cb70 = 0;
   _DAT_0060cb74 = 0;
@@ -60,10 +60,10 @@ void __cdecl InitSatyrSounds(void)
   _DAT_0060cb88 = 0;
   _DAT_0060cb8c = 0;
   _DAT_0060cb28 = &sncSOUND_DESCR_3D::_vftable_;
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cb90,char_explos,0,0,0.0,0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cb90, char_explos, 0, 0, 0.0f, 0);
   _DAT_0060cb90 = &sncSOUND_DESCR_3D::_vftable_;
-  _DAT_0060cbf0 = uVar1;
-  _DAT_0060cbf4 = uVar2;
+  _DAT_0060cbf0 = value1;
+  _DAT_0060cbf4 = value2;
   return;
 }
 
@@ -72,7 +72,7 @@ void __cdecl InitSatyrSounds(void)
 
 int aiSatyrInit()
 {
-    int result = entRegisterClass(ai_satyr, 0x244E5043, 0x32, aiSATYR::Create, ai_satyr, 0);
+    int result = entRegisterClass(ai_satyr, $NPC, 0x32, aiSATYR::Create, ai_satyr, 0);
     if (result == 0)
         return 0;
 
@@ -822,3 +822,4 @@ int __thiscall aiSATYR::IsAnimSeqGoodForFallback(aiSATYR *this)
   iVar1 = (**(code **)(*(int *)this + 200))();
   return (uint)(iVar1 != 5);
 }
+
