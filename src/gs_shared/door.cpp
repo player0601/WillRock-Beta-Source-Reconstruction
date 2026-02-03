@@ -2,13 +2,13 @@
 /* from: gs_shared:door.cpp
    addr: 00543B00 */
 
-int __fastcall doorInit(void)
+int doorInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_door,0x444f4f52,0x28,doorDOOR::Create,(char *)0x0,1);
-  return (uint)(iVar1 != 0);
+  result = entRegisterClass(door, DOOR, 0x28, doorDOOR::Create,(char *)0x0, 1);
+  return (uint)(result != 0);
 }
 
 
@@ -719,5 +719,6 @@ entENTITY * __fastcall doorDOOR::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
 
