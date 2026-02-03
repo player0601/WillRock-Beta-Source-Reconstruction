@@ -1,4 +1,11 @@
 #include "entity.h"
+#include "ai_area.h"
+#include "ai_enemy.h"
+#include "ai_ctrl.h"
+#include "ai_ctrl_script.h"
+#include "ai_ctrl_anim.h"
+#include "ai_ctrl_nav_plan.h"
+#include "gs_sound.h"
 
 /* from: ai_satyr.cpp
    addr: 0044D780 */
@@ -828,5 +835,6 @@ int __thiscall aiSATYR::IsAnimSeqGoodForFallback(aiSATYR *this)
   iVar1 = (**(code **)(*(int *)this + 200))();
   return (uint)(iVar1 != 5);
 }
+
 
 
