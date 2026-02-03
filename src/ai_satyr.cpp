@@ -18,17 +18,17 @@ void __cdecl InitSatyrSounds(void)
   undefined4 uVar1;
   undefined4 uVar2;
   
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c920,s_satyr_beeing_hit,0,0x40000,0.0,0)
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c920,satyr_beeing_hit,0,0x40000,0.0,0)
   ;
   _DAT_0060c980 = 0;
   _DAT_0060c984 = 0;
   _DAT_0060c920 = &sncSOUND_DESCR_3D::_vftable_;
   sncSOUND_DESCR::sncSOUND_DESCR
-            ((sncSOUND_DESCR *)&DAT_0060c988,s_satyr_arrow_hit_body,0,0x40000,0.0,0);
+            ((sncSOUND_DESCR *)&DAT_0060c988,satyr_arrow_hit_body,0,0x40000,0.0,0);
   _DAT_0060c9e8 = 0;
   _DAT_0060c9ec = 0;
   _DAT_0060c988 = &sncSOUND_DESCR_3D::_vftable_;
-  apNAME::SetName((apNAME *)&DAT_0060c9f4,s_satyr_death);
+  apNAME::SetName((apNAME *)&DAT_0060c9f4,satyr_death);
   _DAT_0060ca34 = 0x40000;
   _DAT_0060ca38 = 0;
   _DAT_0060ca3c = 0;
@@ -39,15 +39,15 @@ void __cdecl InitSatyrSounds(void)
   _DAT_0060ca50 = 0;
   _DAT_0060ca54 = 0;
   _DAT_0060c9f0 = &sncSOUND_DESCR_3D::_vftable_;
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060ca58,s_mino_death_1,0,0x40000,0.0,0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060ca58,mino_death_1,0,0x40000,0.0,0);
   _DAT_0060cab8 = 0;
   _DAT_0060cabc = 0;
   _DAT_0060ca58 = &sncSOUND_DESCR_3D::_vftable_;
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cac0,s_satyr_run,0,0x40000,0.0,0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cac0,satyr_run,0,0x40000,0.0,0);
   _DAT_0060cb20 = 0;
   _DAT_0060cb24 = 0;
   _DAT_0060cac0 = &sncSOUND_DESCR_3D::_vftable_;
-  apNAME::SetName((apNAME *)&DAT_0060cb2c,s_satyr_shot_arrow);
+  apNAME::SetName((apNAME *)&DAT_0060cb2c,satyr_shot_arrow);
   uVar2 = DAT_005d3fa0;
   uVar1 = DAT_005d3f9c;
   _DAT_0060cb6c = 0x40000;
@@ -60,42 +60,33 @@ void __cdecl InitSatyrSounds(void)
   _DAT_0060cb88 = 0;
   _DAT_0060cb8c = 0;
   _DAT_0060cb28 = &sncSOUND_DESCR_3D::_vftable_;
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cb90,s_char_explos,0,0,0.0,0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060cb90,char_explos,0,0,0.0,0);
   _DAT_0060cb90 = &sncSOUND_DESCR_3D::_vftable_;
   _DAT_0060cbf0 = uVar1;
   _DAT_0060cbf4 = uVar2;
   return;
 }
 
-
-
-
 /* from: ai_satyr.cpp
    addr: 0044D920 */
 
-int __fastcall aiSatyrInit(void)
-
+int aiSatyrInit()
 {
-  int iVar1;
-  
-  iVar1 = entRegisterClass(s_ai_satyr,0x244e5043,0x32,aiSATYR::Create,s_ai_satyr,0);
-  if (iVar1 == 0) {
-    return 0;
-  }
-  iVar1 = pjlSatyrArrowInit();
-  if (iVar1 == 0) {
-    return 0;
-  }
-  iVar1 = sncLinkSndListData(7,(sncSOUND_DESCR_3D *)&DAT_0060c920);
-  if (iVar1 == 0) {
-    return 0;
-  }
-  iVar1 = wrsfxSatirInit();
-  return (uint)(iVar1 != 0);
+    int result = entRegisterClass(ai_satyr, 0x244E5043, 0x32, aiSATYR::Create, ai_satyr, 0);
+    if (result == 0)
+        return 0;
+
+    result = pjlSatyrArrowInit();
+    if (result == 0)
+        return 0;
+
+    result = sncLinkSndListData(7, reinterpret_cast<sncSOUND_DESCR_3D*>(&DAT_0060c920));
+    if (result == 0)
+        return 0;
+
+    result = wrsfxSatirInit();
+    return result != 0;
 }
-
-
-
 
 /* from: ai_satyr.cpp
    addr: 0044D970 */
@@ -144,13 +135,13 @@ int __thiscall aiSATYR::SetupAniSystem(aiSATYR *this)
     } while (iVar6 != 0);
   }
   *(undefined4 **)(paVar1 + 0x90) = puVar2;
-  _entAnimSetSeqName(paVar1,0,s_SATYR_SEQ_IDLE);
-  _entAnimSetSeqName(paVar1,1,s_SATYR_SEQ_SHOOT_ARROW);
-  _entAnimSetSeqName(paVar1,2,s_SATYR_SEQ_WOUNDED);
-  _entAnimSetSeqName(paVar1,3,s_SATYR_SEQ_RUN);
-  _entAnimSetSeqName(paVar1,4,s_SATYR_SEQ_DEATH1);
-  _entAnimSetSeqName(paVar1,5,s_SATYR_SEQ_DEATH2);
-  _entAnimSetSeqName(paVar1,6,s_SATYR_SEQ_APPEAR);
+  _entAnimSetSeqName(paVar1,0,SATYR_SEQ_IDLE);
+  _entAnimSetSeqName(paVar1,1,SATYR_SEQ_SHOOT_ARROW);
+  _entAnimSetSeqName(paVar1,2,SATYR_SEQ_WOUNDED);
+  _entAnimSetSeqName(paVar1,3,SATYR_SEQ_RUN);
+  _entAnimSetSeqName(paVar1,4,SATYR_SEQ_DEATH1);
+  _entAnimSetSeqName(paVar1,5,SATYR_SEQ_DEATH2);
+  _entAnimSetSeqName(paVar1,6,SATYR_SEQ_APPEAR);
   entAnimAssignTplSeq(paVar1,local_4,local_8);
   this_00 = (animSYSTEM *)operator_new(0x14);
   if ((this_00 != (animSYSTEM *)0x0) &&
@@ -543,13 +534,9 @@ int __thiscall aiSATYR::EvalAnimGoalSeq(aiSATYR *this)
     return 6;
   }
   if ((*(uint *)(this + 1099) & 0x40000) != 0) {
-                    /* WARNING: Could not recover jumptable at 0x0044e3d7. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
     iVar1 = (**(code **)(*(int *)this + 0x1c4))();
     return iVar1;
   }
-                    /* WARNING: Could not recover jumptable at 0x0044e3e0. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
   iVar1 = (**(code **)(*(int *)this + 0x1c8))();
   return iVar1;
 }
@@ -579,7 +566,6 @@ void __thiscall aiSATYR::ProcessActionFrame(aiSATYR *this)
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_satyr.cpp
    addr: 0044E430 */
 
@@ -645,7 +631,7 @@ void __thiscall aiSATYR::LaunchOneProjectile(aiSATYR *this)
   local_102 = 0x51;
   animCREATE_DATA::animCREATE_DATA(local_98);
   animINST::Validate(*(animINST **)(this + 0xbc),4);
-  poVar1 = objFindName(*(objOBJ **)(*(int *)(this + 0xbc) + 0x10),s_arrow__lod01_4);
+  poVar1 = objFindName(*(objOBJ **)(*(int *)(this + 0xbc) + 0x10),arrow__lod01_4);
   if (poVar1 != (objOBJ *)0x0) {
     objOBJ::GetOrigin(poVar1,(m3dV *)local_b0);
     if (*(float *)(this + 0x3cf) < ___real_40000000) {
@@ -672,7 +658,7 @@ void __thiscall aiSATYR::LaunchOneProjectile(aiSATYR *this)
       pmVar4 = pmVar4 + 4;
     }
     m3dMATR::Translate(local_86,(m3dV *)local_b0,0);
-    peVar2 = entCreate(gsScenePtr,s_pjl_satyr_arrow,s_pjl_satyr_arrow,local_98,&local_104,0);
+    peVar2 = entCreate(gsScenePtr,pjl_satyr_arrow,pjl_satyr_arrow,local_98,&local_104,0);
     if ((peVar2 != (entENTITY *)0x0) &&
        (iVar3 = *(int *)(this + 0x54f), *(int *)(this + 0x54f) = iVar3 + -1, iVar3 + -1 < 1)) {
       *(undefined4 *)(this + 0x547) = 0x3dcccccd;
@@ -685,7 +671,6 @@ void __thiscall aiSATYR::LaunchOneProjectile(aiSATYR *this)
 
 
 /* from: ai_satyr.cpp
-   addr: 0044E610
    addr: 0044E610 */
 
 void __thiscall aiGEFEST_GENERIC::UpdateTimers(aiGEFEST_GENERIC *this)
@@ -782,13 +767,13 @@ int __thiscall aiSATYR::IsArmoredObject(aiSATYR *this,char *param_1)
 {
   int iVar1;
   
-  iVar1 = strnicmp(param_1,s_bow_,4);
+  iVar1 = strnicmp(param_1,bow,4);
   if (iVar1 != 0) {
-    iVar1 = strnicmp(param_1,s_cyl4,4);
+    iVar1 = strnicmp(param_1,cyl4,4);
     if (iVar1 != 0) {
-      iVar1 = strnicmp(param_1,s_quiver,6);
+      iVar1 = strnicmp(param_1,quiver,6);
       if (iVar1 != 0) {
-        iVar1 = strnicmp(param_1,s_arrow_,6);
+        iVar1 = strnicmp(param_1,arrow,6);
         if (iVar1 != 0) {
           return 0;
         }
@@ -837,7 +822,3 @@ int __thiscall aiSATYR::IsAnimSeqGoodForFallback(aiSATYR *this)
   iVar1 = (**(code **)(*(int *)this + 200))();
   return (uint)(iVar1 != 5);
 }
-
-
-
-
