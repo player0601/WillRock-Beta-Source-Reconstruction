@@ -1,5 +1,5 @@
+#include "entity.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_satyr.cpp
    addr: 0044D780 */
 
@@ -828,4 +828,5 @@ int __thiscall aiSATYR::IsAnimSeqGoodForFallback(aiSATYR *this)
   iVar1 = (**(code **)(*(int *)this + 200))();
   return (uint)(iVar1 != 5);
 }
+
 
