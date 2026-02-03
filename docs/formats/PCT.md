@@ -1,4 +1,4 @@
-## PCT format (.pct | gs_shared/picture.cpp)
+## PCT format (.pct | engine/picture.cpp)
 The PCT format is Will Rock’s proprietary texture format. It is a chunk-based format that supports multiple image compression types, mipmaps and bit depths.
 It supports multiple texture formats, including:
 - RGBA32 - 32-bit uncompressed color (8 bits per channel + alpha)
