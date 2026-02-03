@@ -9,7 +9,7 @@ It supports multiple texture formats, including:
 - RGB323 – 8-bit color format (3 bits red, 2 bits green, 3 bits blue)
 
 ## File structure
-- F0	"**TCIP**" header / magic signature. Marks the start of the texture file.
+- F0	"**TCIP**" magic header. Marks the start of the texture file.
 - F1	Texture width and height.
 - F2	Texture format ID (e.g., RGBA32, DXT1/3/5, RGB565, RGB323).
 - F9	Mipmap count (optional). Indicates how many lower-resolution versions exist.
