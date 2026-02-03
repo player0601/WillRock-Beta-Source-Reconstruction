@@ -8,6 +8,7 @@
 #include "ai_ctrl_nav_plan.h"
 #include "gs_msg.h"
 #include "gs_sound.h"
+#include "sfx_satir.h"
 
 /* from: ai_satyr.cpp
    addr: 0044D780 */
@@ -822,4 +823,5 @@ int __thiscall aiSATYR::IsAnimSeqGoodForFallback(aiSATYR *this)
   iVar1 = (**(code **)(*(int *)this + 200))();
   return (uint)(iVar1 != 5);
 }
+
 
