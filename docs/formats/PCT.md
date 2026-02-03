@@ -5,6 +5,3 @@ It supports multiple texture formats, such as:
 - DXT3
 - DXT5
 - RGBA32
-
-## TPL format (.tpl)
-...
