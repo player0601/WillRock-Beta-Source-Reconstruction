@@ -1,6 +1,6 @@
 #include "entity.h"
 #include "ai_npc_wr.h"
-#include "gs_sounds.h"
+#include "gs_sound.h"
 
 /* from: ai_croc.cpp
    addr: 00438B60 */
@@ -535,5 +535,6 @@ entENTITY * __fastcall aiCROC::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
 
