@@ -2,19 +2,15 @@
 /* from: ai_cyc_stone_pjl.cpp
    addr: 004396A0 */
 
-int __fastcall aiCycStonePjlInit(void)
+int aiCycStonePjlInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_pjl_stone_cyclop,0x53544f4e,0x32,pjlSTONE::Create,(char *)0x0,1);
-  return (uint)(iVar1 != 0);
+  result = entRegisterClass(pjl_stone_cyclop, STON, 0x32, pjlSTONE::Create,(char *)0x0, 1);
+  return (uint)(result != 0);
 }
 
-
-
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_cyc_stone_pjl.cpp
    addr: 004396D0 */
 
@@ -55,9 +51,6 @@ entENTITY * __fastcall pjlSTONE::Create(animINST *param_1)
 
 
 /* from: ai_cyc_stone_pjl.cpp
-   addr: 00439790
-   addr: 00439790
-   addr: 00439790
    addr: 00439790 */
 
 void * __thiscall pjlSTONE::_vector_deleting_destructor_(pjlSTONE *this,uint param_1)
@@ -74,7 +67,6 @@ void * __thiscall pjlSTONE::_vector_deleting_destructor_(pjlSTONE *this,uint par
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_cyc_stone_pjl.cpp
    addr: 004397C0 */
 
@@ -249,7 +241,6 @@ void __thiscall pjlKNIFE::GenerateCDTUponHittingPlayer(pjlKNIFE *this)
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_cyc_stone_pjl.cpp
    addr: 00439B60 */
 
@@ -1007,4 +998,5 @@ void __thiscall pjlEV_CHANGE_STATE::pjlEV_CHANGE_STATE(pjlEV_CHANGE_STATE *this)
   *(undefined2 *)(this + 2) = 0xc;
   return;
 }
+
 
