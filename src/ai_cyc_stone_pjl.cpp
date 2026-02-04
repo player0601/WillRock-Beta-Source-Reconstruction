@@ -1,3 +1,4 @@
+#include "entity.h"
 
 /* from: ai_cyc_stone_pjl.cpp
    addr: 004396A0 */
@@ -998,5 +999,6 @@ void __thiscall pjlEV_CHANGE_STATE::pjlEV_CHANGE_STATE(pjlEV_CHANGE_STATE *this)
   *(undefined2 *)(this + 2) = 0xc;
   return;
 }
+
 
 
