@@ -1,22 +1,22 @@
+#include "entity.h"
+#include "ai_npc_wr.h"
+#include "gs_sounds.h"
 
 /* from: ai_croc.cpp
    addr: 00438B60 */
 
-int __fastcall aiCrocInit(void)
+int aiCrocInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_ai_croc,0x244e5043,0x32,aiCROC::Create,s_ai_croc,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(ai_croc, $NPC, 0x32, aiCROC::Create, ai_croc,0);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(1,(sncSOUND_DESCR_3D *)&DAT_0060ae48);
-  return (uint)(iVar1 != 0);
+  result = sncLinkSndListData(1,(sncSOUND_DESCR_3D *)&DAT_0060ae48);
+  return (uint)(result != 0);
 }
-
-
-
 
 /* from: ai_croc.cpp
    addr: 00438BA0 */
@@ -535,4 +535,5 @@ entENTITY * __fastcall aiCROC::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
