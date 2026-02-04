@@ -1,5 +1,3 @@
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: gs:entity.cpp
    addr: 004F3EF0 */
 
@@ -1814,4 +1812,5 @@ int __thiscall entCDT_REFINE_EXCL::IsInclInst(entCDT_REFINE_EXCL *this,animINST 
   iVar1 = cdtREFINE::IsInclInst((cdtREFINE *)this,param_1);
   return iVar1;
 }
+
 
