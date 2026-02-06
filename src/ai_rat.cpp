@@ -1,22 +1,23 @@
+#include "entity.h"
 
 /* from: ai_rat.cpp
    addr: 0044CC00 */
 
-int __fastcall aiRatInit(void)
+int aiRatInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_ai_rat,0x244e5043,0x32,aiRAT::Create,s_ai_rat,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(s_ai_rat,0x244e5043,0x32,aiRAT::Create,s_ai_rat,0);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = wrsfxRatInit();
-  if (iVar1 == 0) {
+  result = wrsfxRatInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(5,(sncSOUND_DESCR_3D *)&DAT_0060c6f8);
-  return (uint)(iVar1 != 0);
+  result = sncLinkSndListData(5,(sncSOUND_DESCR_3D *)&DAT_0060c6f8);
+  return (uint)(result != 0);
 }
 
 
@@ -640,4 +641,5 @@ aiRAT::AdjustSpeedsOnFallbackStart(aiRAT *this,dmgWEAPON *param_1,float *param_2
   }
   return;
 }
+
 
