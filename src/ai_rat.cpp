@@ -21,9 +21,6 @@ int aiRatInit(void)
   return (uint)(result != 0);
 }
 
-
-
-
 /* from: ai_rat.cpp
    addr: 0044CC50 */
 
@@ -642,6 +639,7 @@ aiRAT::AdjustSpeedsOnFallbackStart(aiRAT *this,dmgWEAPON *param_1,float *param_2
   }
   return;
 }
+
 
 
 
