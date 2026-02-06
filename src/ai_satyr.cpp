@@ -671,22 +671,6 @@ void __thiscall aiSATYR::LaunchOneProjectile(aiSATYR *this)
 
 
 
-/* from: ai_satyr.cpp
-   addr: 0044E610 */
-
-void __thiscall aiGEFEST_GENERIC::UpdateTimers(aiGEFEST_GENERIC *this)
-
-{
-  float extraout_EDX;
-  float extraout_EDX_00;
-  
-  aiNPC_WR::UpdateTimers((aiNPC_WR *)this);
-  m3dUpdateTimeField((float *)(this + 0x547),extraout_EDX);
-  m3dUpdateTimeField((float *)(this + 0x54b),extraout_EDX_00);
-  return;
-}
-
-
 
 
 /* from: ai_satyr.cpp
@@ -719,6 +703,7 @@ void __thiscall aiSATYR::FillSoundFlags(aiSATYR *this)
   }
   return;
 }
+
 
 
 
@@ -823,5 +808,6 @@ int __thiscall aiSATYR::IsAnimSeqGoodForFallback(aiSATYR *this)
   iVar1 = (**(code **)(*(int *)this + 200))();
   return (uint)(iVar1 != 5);
 }
+
 
 
