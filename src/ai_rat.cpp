@@ -8,7 +8,7 @@ int aiRatInit(void)
 {
   int result;
   
-  result = entRegisterClass(s_ai_rat,0x244e5043,0x32,aiRAT::Create,s_ai_rat,0);
+  result = entRegisterClass(ai_rat, $NPC, 0x32, aiRAT::Create, ai_rat, 0);
   if (result == 0) {
     return 0;
   }
@@ -641,5 +641,6 @@ aiRAT::AdjustSpeedsOnFallbackStart(aiRAT *this,dmgWEAPON *param_1,float *param_2
   }
   return;
 }
+
 
 
