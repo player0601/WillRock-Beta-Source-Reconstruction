@@ -1,22 +1,24 @@
+#include "entity.h"
+#include "ai_npc_wr_fly.h"
 
 /* from: ai_medusa.cpp
    addr: 00444B10 */
 
-int __fastcall aiMedusaInit(void)
+int aiMedusaInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_ai_medusa,0x244e5043,0x32,aiMEDUSA::Create,s_ai_medusa,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(ai_medusa, $NPC, 0x32, aiMEDUSA::Create, ai_medusa, 0);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = aiPjlMedusaInit();
-  if (iVar1 == 0) {
+  result = aiPjlMedusaInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(7,(sncSOUND_DESCR_3D *)&DAT_0060bf78);
-  return (uint)(iVar1 != 0);
+  result = sncLinkSndListData(7,(sncSOUND_DESCR_3D *)&DAT_0060bf78);
+  return (uint)(result != 0);
 }
 
 
@@ -1552,4 +1554,5 @@ entENTITY * __fastcall aiMEDUSA::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
