@@ -1,3 +1,5 @@
+#include "entity.h"
+#include "ai_npc_wr.h"
 
 /* from: ai_mino.cpp
    addr: 00447F40 */
@@ -5,30 +7,27 @@
 int __fastcall aiMinoInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_ai_mino_atrium,0x244e5043,0x32,aiMINO_ATRIUM::Create,s_ai_mino,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(ai_mino_atrium, $NPC, 0x32, aiMINO_ATRIUM::Create, ai_mino, 0); 
+  if (result == 0) {
     return 0;
   }
-  iVar1 = entRegisterClass(s_ai_mino,0x244e5043,0x32,aiMINO::Create,s_ai_mino,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(ai_mino, $NPC, 0x32, aiMINO::Create, ai_mino, 0);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = minoAxInit();
-  if (iVar1 == 0) {
+  result = minoAxInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = minoSFXInit();
-  if (iVar1 == 0) {
+  result = minoSFXInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(0xb,(sncSOUND_DESCR_3D *)&_aiMinoSndList);
-  return (uint)(iVar1 != 0);
+  result = sncLinkSndListData(0xb,(sncSOUND_DESCR_3D *)&_aiMinoSndList);
+  return (uint)(result != 0);
 }
-
-
-
 
 /* from: ai_mino.cpp
    addr: 00447FB0 */
@@ -1705,4 +1704,5 @@ entENTITY * __fastcall aiMINO_ATRIUM::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
