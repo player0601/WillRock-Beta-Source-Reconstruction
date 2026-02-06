@@ -1,4 +1,5 @@
 #include "entity.h"
+#include "ai_npc_wr.h"
 
 /* from: ai_rat.cpp
    addr: 0044CC00 */
@@ -641,6 +642,7 @@ aiRAT::AdjustSpeedsOnFallbackStart(aiRAT *this,dmgWEAPON *param_1,float *param_2
   }
   return;
 }
+
 
 
 
