@@ -10,7 +10,7 @@ int aiCrocInit(void)
 {
   int result;
   
-  result = entRegisterClass(ai_croc, $NPC, 0x32, aiCROC::Create, ai_croc,0);
+  result = entRegisterClass(ai_croc, $NPC, 0x32, aiCROC::Create, ai_croc, 0);
   if (result == 0) {
     return 0;
   }
@@ -535,6 +535,7 @@ entENTITY * __fastcall aiCROC::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
 
 
