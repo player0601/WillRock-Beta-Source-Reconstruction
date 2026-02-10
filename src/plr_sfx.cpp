@@ -1,3 +1,5 @@
+#include "player.h"
+#include "m3d.h"
 
 /* from: plr_sfx.cpp
    addr: 00428E50 */
@@ -68,8 +70,6 @@ void __thiscall plrPLAYER::NotifySFXBloodHands(plrPLAYER *this,m3dV *param_1)
 
 {
   if (param_1 == (m3dV *)0x0) {
-                    /* WARNING: Could not recover jumptable at 0x00429008. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
     (**(code **)(*(int *)*(plrBLOOD_HANDS **)(this + 0x367) + 4))();
     return;
   }
@@ -995,4 +995,5 @@ plrBLOOD_HANDS::ShadeFace
   }
   return 0;
 }
+
 
