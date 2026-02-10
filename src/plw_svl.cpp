@@ -1,37 +1,41 @@
+#include "entity.h"
+#include "weapon.h"
+#include "m3d.h"
+
 /* from: plw_svl.cpp
    addr: 00413970 */
 
-int __fastcall pwpSVLInit(void)
+int pwpSVLInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_pwp_svl,0x5053564c,0x50,pwpSHOVEL::Create,(char *)0x0,1);
-  if (iVar1 == 0) {
+  result = entRegisterClass(pwp_svl, PSVL, 0x50, pwpSHOVEL::Create, (char *)0x0, 1);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = entRegisterClass(s_sfx_shovel,0x5053564c,0x50,pwpSVL_HIT::Create,(char *)0x0,1);
-  if (iVar1 == 0) {
+  result = entRegisterClass(sfx_shovel, PSVL, 0x50, pwpSVL_HIT::Create, (char *)0x0, 1);
+  if (result == 0) {
     return 0;
   }
-  pwpSVL_SMOKE::pTexSmoke = txmMANAGER::Add(txmManager,s_sfx_mcg_cloud,0x40003,1);
+  pwpSVL_SMOKE::pTexSmoke = txmMANAGER::Add(txmManager, sfx_mcg_cloud, 0x40003, 1);
   if (pwpSVL_SMOKE::pTexSmoke == (txmTEXTURE *)0x0) {
     return 0;
   }
-  pwpSVL_PARTS::pTexPart = txmMANAGER::Add(txmManager,s_sfx_mcg_part,0x40003,1);
+  pwpSVL_PARTS::pTexPart = txmMANAGER::Add(txmManager, sfx_mcg_part, 0x40003, 1);
   if (pwpSVL_PARTS::pTexPart == (txmTEXTURE *)0x0) {
     return 0;
   }
-  pwpSVL_SPARKS::pTexSparks = txmMANAGER::Add(txmManager,s_sfx_shovel_sparks,0x40003,1);
+  pwpSVL_SPARKS::pTexSparks = txmMANAGER::Add(txmManager, sfx_shovel_sparks, 0x40003, 1);
   if (pwpSVL_SPARKS::pTexSparks == (txmTEXTURE *)0x0) {
     return 0;
   }
-  pwpSVL_SCORCHMARK::pTexScorchMark = txmMANAGER::Add(txmManager,s_sfx_shovel_scorchmark,0x40003,1);
+  pwpSVL_SCORCHMARK::pTexScorchMark = txmMANAGER::Add(txmManager, sfx_shovel_scorchmark, 0x40003, 1);
   if (pwpSVL_SCORCHMARK::pTexScorchMark == (txmTEXTURE *)0x0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(3,(sncSOUND_DESCR_3D *)&DAT_00603190);
-  return (uint)(iVar1 != 0);
+  result = sncLinkSndListData(3,(sncSOUND_DESCR_3D *)&DAT_00603190);
+  return (uint)(result != 0);
 }
 
 
@@ -1059,3 +1063,4 @@ entENTITY * __fastcall pwpSHOVEL::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
