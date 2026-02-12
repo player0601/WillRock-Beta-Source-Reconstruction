@@ -1,137 +1,136 @@
-
 /* from: engine:sceneio.cpp
    addr: 00582340 */
 
-void sioSetSourceFile(fioFILE *param_1)
+void sioSetSourceFile(fioFILE *file)
 
 {
   sioFilePtr = file;
-  (**(code **)(*(int *)param_1 + 0xc))(0,1);
+  (**(code **)(*(int *)file + 0xc))(0,1);
   return;
 }
 
 /* from: engine:sceneio.cpp
    addr: 00582350 */
 
-int sioReadScene(scnSCENE *param_1)
+int sioReadScene(scnSCENE *scene)
 
 {
-  int iVar1;
-  objOBJ *poVar2;
-  cdtCOLL_SCN *pcVar3;
-  camCAMERA *pcVar4;
-  ushort local_10;
+  int result;
+  objOBJ *rootObject;
+  cdtCOLL_SCN *collision;
+  camCAMERA *camera;
+  ushort chunkID;
   undefined2 local_e;
   undefined2 uStack_c;
   undefined4 local_a;
   undefined4 local_6;
   
-  local_10 = 0;
+  chunkID = 0;
   local_e = 0xffff;
   uStack_c = 0xffff;
   local_a = 0xffffffff;
   local_6 = 0xffffffff;
-  iVar1 = (**(code **)(*(int *)sioFilePtr + 0x10))();
+  result = (**(code **)(*(int *)sioFilePtr + 0x10))();
   do {
-    if (((iVar1 != 0) || (iVar1 = fioFILE::ReadChunk(sioFilePtr,(fioCHUNK *)&local_10), iVar1 == 0)
-        ) || (iVar1 = (**(code **)(*(int *)sioFilePtr + 0x10))(), iVar1 != 0)) {
+    if (((result != 0) || (result = fioFILE::ReadChunk(sioFilePtr,(fioCHUNK *)&chunkID), result == 0)
+        ) || (result = (**(code **)(*(int *)sioFilePtr + 0x10))(), result != 0)) {
       apFree(sioTexListNmb);
       sioTexListNmb = NULL;
       return 1;
     }
-    fioFILE::RevertChunk(_sioFilePtr,(fioCHUNK *)0x0);
-    if (local_10 < 0x21e) {
-      if (local_10 == 0x21d) {
-        sioReadNamedSelList((int *)(param_1 + 0x78),(selSEL **)(param_1 + 0x7c));
+    fioFILE::RevertChunk(sioFilePtr,(fioCHUNK *)0x0);
+    if (chunkID < 0x21e) {
+      if (chunkID == 0x21d) {
+        sioReadNamedSelList((int *)(scene + 0x78),(selSEL **)(scene + 0x7c));
       }
-      else if (local_10 < 0x1b9) {
-        if (local_10 == 0x1b8) {
-          sioReadInstList(param_1);
+      else if (chunkID < 0x1b9) {
+        if (chunkID == 0x1b8) {
+          sioReadInstList(scene);
         }
-        else if (local_10 == 0xf0) {
-          poVar2 = sioReadObj();
-          *(objOBJ **)(param_1 + 0x44) = poVar2;
+        else if (chunkID == 0xf0) {
+          rootObject = sioReadObj();
+          *(objOBJ **)(scene + 0x44) = rootObject;
         }
         else {
-          if ((local_10 < 0x154) || (0x155 < local_10)) goto LAB_005824b8;
+          if ((chunkID < 0x154) || (0x155 < chunkID)) goto LAB_005824b8;
           sioReadTex();
         }
       }
-      else if (local_10 == 0x1ea) {
-        sioReadTplList(param_1);
+      else if (chunkID == 0x1ea) {
+        sioReadTplList(scene);
       }
       else {
-        if (local_10 != 0x21c) goto LAB_005824b8;
-        pcVar3 = sioReadColl_OLD();
-        *(cdtCOLL_SCN **)(param_1 + 0x50) = pcVar3;
-        if (pcVar3 != (cdtCOLL_SCN *)0x0) {
-          *(scnSCENE **)(pcVar3 + 100) = param_1;
+        if (chunkID != 0x21c) goto LAB_005824b8;
+        collision = sioReadColl_OLD();
+        *(cdtCOLL_SCN **)(scene + 0x50) = collision;
+        if (collision != (cdtCOLL_SCN *)0x0) {
+          *(scnSCENE **)(collision + 100) = scene;
         }
       }
     }
-    else if (local_10 < 0x281) {
-      if (local_10 == 0x280) {
-        sioReadLightList(param_1);
+    else if (chunkID < 0x281) {
+      if (chunkID == 0x280) {
+        sioReadLightList(scene);
       }
-      else if (local_10 == 0x21e) {
-        fioFILE::ReadChunk(_sioFilePtr,(fioCHUNK *)&local_10);
-        iVar1 = sioReadPSheet((psSHEET **)(param_1 + 0x80));
-        if (iVar1 == 0) {
+      else if (chunkID == 0x21e) {
+        fioFILE::ReadChunk(_sioFilePtr,(fioCHUNK *)&chunkID);
+        result = sioReadPSheet((psSHEET **)(scene + 0x80));
+        if (result == 0) {
           apLogErr("Cannot parse global scene script");
         }
       }
       else {
-        if (local_10 != 0x21f) goto LAB_005824b8;
-        pcVar3 = sioReadColl();
-        *(cdtCOLL_SCN **)(param_1 + 0x50) = pcVar3;
-        if (pcVar3 != (cdtCOLL_SCN *)0x0) {
-          *(scnSCENE **)(pcVar3 + 100) = param_1;
+        if (chunkID != 0x21f) goto LAB_005824b8;
+        collision = sioReadColl();
+        *(cdtCOLL_SCN **)(scene + 0x50) = collision;
+        if (collision != (cdtCOLL_SCN *)0x0) {
+          *(scnSCENE **)(collision + 100) = scene;
         }
       }
     }
-    else if (local_10 == 0x3ac) {
-      pcVar4 = sioReadCamera();
-      *(camCAMERA **)(param_1 + 0x84) = pcVar4;
+    else if (chunkID == 0x3ac) {
+      camera = sioReadCamera();
+      *(camCAMERA **)(scene + 0x84) = camera;
     }
     else {
 LAB_005824b8:
-      fioFILE::SkipChunk(_sioFilePtr,(fioCHUNK *)&local_10);
+      fioFILE::SkipChunk(sioFilePtr,(fioCHUNK *)&chunkID);
     }
-    iVar1 = (**(code **)(*(int *)_sioFilePtr + 0x10))();
+    result = (**(code **)(*(int *)sioFilePtr + 0x10))();
   } while( true );
 }
 
 /* from: engine:sceneio.cpp
    addr: 00582510 */
 
-int __fastcall sioReadSceneTex(void)
+int sioReadSceneTex(void)
 
 {
-  int iVar1;
-  ushort local_10;
+  int result;
+  ushort chunkID;
   undefined2 local_e;
   undefined2 uStack_c;
   undefined4 local_a;
   undefined4 local_6;
   
-  local_10 = 0;
+  chunkID = 0;
   local_e = 0xffff;
   uStack_c = 0xffff;
   local_a = 0xffffffff;
   local_6 = 0xffffffff;
-  iVar1 = (**(code **)(*(int *)sioFilePtr + 0x10))();
-  while ((iVar1 == 0 && (iVar1 = fioFILE::ReadChunk(sioFilePtr,(fioCHUNK *)&local_10), iVar1 != 0))
+  result = (**(code **)(*(int *)sioFilePtr + 0x10))();
+  while ((result == 0 && (result = fioFILE::ReadChunk(sioFilePtr,(fioCHUNK *)&chunkID), result != 0))
         ) {
-    iVar1 = (**(code **)(*(int *)sioFilePtr + 0x10))();
-    if (iVar1 != 0) break;
-    if ((local_10 < 0x154) || (0x155 < local_10)) {
-      fioFILE::SkipChunk(sioFilePtr,(fioCHUNK *)&local_10);
+    result = (**(code **)(*(int *)sioFilePtr + 0x10))();
+    if (result != 0) break;
+    if ((chunkID < 0x154) || (0x155 < chunkID)) {
+      fioFILE::SkipChunk(sioFilePtr,(fioCHUNK *)&chunkID);
     }
     else {
       fioFILE::RevertChunk(sioFilePtr,(fioCHUNK *)0x0);
-      _sioReadTex();
+      sioReadTex();
     }
-    iVar1 = (**(code **)(*(int *)sioFilePtr + 0x10))();
+    result = (**(code **)(*(int *)sioFilePtr + 0x10))();
   }
   apFree(sioTexListNmb);
   sioTexListNmb = NULL;
@@ -190,11 +189,11 @@ int sioReadTemplate(animTPL* tpl, bool loadTexture)
   if (result == 0) {
     return 0;
   }
-  result = sioReadPSheet(&tpl->propertySheet); // 0xC4 
+  result = sioReadPSheet(&tpl->propertySheet);
   if (result == 0) {
     apLogErr("Cannot parse script for template: %s", tpl->templateName);
   }
-  result = sioReadNamedSelList(&tpl->numSelections, &tpl->selectionList); // 0xB4, 0xC0
+  result = sioReadNamedSelList(&tpl->numSelections, &tpl->selectionList);
   if (result == 0) {
     return 0;
   }
