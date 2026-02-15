@@ -1,17 +1,14 @@
 /* from: plw_mcg.cpp
    addr: 0040E5D0 */
 
-int __fastcall pwpMCGInit(void)
+int pwpMCGInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_pwp_mcg,0x504d4347,0x50,pwpMACHINEGUN::Create,(char *)0x0,1);
-  return (uint)(iVar1 != 0);
+  result = entRegisterClass(s_pwp_mcg, PMCG, 0x50, pwpMACHINEGUN::Create, NULL , 1);
+  return (uint)(result != 0);
 }
-
-
-
 
 /* from: plw_mcg.cpp
    addr: 0040E600 */
@@ -419,3 +416,4 @@ entENTITY * __fastcall pwpMACHINEGUN::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
