@@ -2,40 +2,40 @@
 /* from: ai_gefest.cpp
    addr: 0043D790 */
 
-int __fastcall aiGefestInit(void)
+int aiGefestInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_ai_gefest,0x244e5043,0x32,aiGEFEST_GENERIC::Create,s_ai_gefest,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(s_ai_gefest,0x244e5043,0x32,aiGEFEST_GENERIC::Create,s_ai_gefest,0);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = entRegisterClass(s_pjl_gefest,0x46494247,0x32,pjlGEFEST::Create,(char *)0x0,1);
-  if (iVar1 == 0) {
+  result = entRegisterClass(pjl_gefest, FIBG, 0x32, pjlGEFEST::Create, NULL, 1);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = wrsfxGefestInit();
-  if (iVar1 == 0) {
+  result = wrsfxGefestInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(0xb,(sncSOUND_DESCR_3D *)&DAT_0060b508);
-  if (iVar1 == 0) {
+  result = sncLinkSndListData(0xb,(sncSOUND_DESCR_3D *)&DAT_0060b508);
+  if (result == 0) {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexScorchMark = txmMANAGER::Add(txmManager,s_sfx_ax_scorch_mark,0x40003,1);
+  aiGEFEST_GENERIC::pTexScorchMark = txmMANAGER::Add(txmManager,sfx_ax_scorch_mark, 0x40003, 1);
   if (aiGEFEST_GENERIC::pTexScorchMark == (txmTEXTURE *)0x0) {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexCarbons = txmMANAGER::Add(txmManager,s_sfx_gefest_carbons,0x40003,1);
+  aiGEFEST_GENERIC::pTexCarbons = txmMANAGER::Add(txmManager,sfx_gefest_carbons ,0x40003, 1);
   if (aiGEFEST_GENERIC::pTexCarbons == (txmTEXTURE *)0x0) {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexCarbonExpl = txmMANAGER::Add(txmManager,s_sfx_gefest_carbon_expl,0x40003,1);
+  aiGEFEST_GENERIC::pTexCarbonExpl = txmMANAGER::Add(txmManager,sfx_gefest_carbon_expl, 0x40003, 1);
   if (aiGEFEST_GENERIC::pTexCarbonExpl == (txmTEXTURE *)0x0) {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexGlow = txmMANAGER::Add(txmManager,s_sfx_gefest_hit_glow,0x40003,1);
+  aiGEFEST_GENERIC::pTexGlow = txmMANAGER::Add(txmManager,sfx_gefest_hit_glow, 0x40003, 1);
   return (uint)(aiGEFEST_GENERIC::pTexGlow != (txmTEXTURE *)0x0);
 }
 
@@ -1350,4 +1350,5 @@ pjlPJL<struct_pwpMDG_PJL_SFX>::DispatchDamage(pjlPJL<struct_pwpMDG_PJL_SFX> *thi
   }
   return;
 }
+
 
