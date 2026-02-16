@@ -1,74 +1,71 @@
 /* from: pwp_comm.cpp
    addr: 00415170 */
 
-int __fastcall pwpInit(void)
+int pwpInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = pwpSVLInit();
-  if (iVar1 == 0) {
+  result = pwpSVLInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpBSKInit();
-  if (iVar1 == 0) {
+  result = pwpBSKInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpBulWpnInit();
-  if (iVar1 == 0) {
+  result = pwpBulWpnInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpMCGInit();
-  if (iVar1 == 0) {
+  result = pwpMCGInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpCLTInit();
-  if (iVar1 == 0) {
+  result = pwpCLTInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpSTGInit();
-  if (iVar1 == 0) {
+  result = pwpSTGInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpMDGInit();
-  if (iVar1 == 0) {
+  result = pwpMDGInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpMNGInit();
-  if (iVar1 == 0) {
+  result = pwpMNGInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpCRBInit();
-  if (iVar1 == 0) {
+  result = pwpCRBInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpBMBInit();
-  if (iVar1 == 0) {
+  result = pwpBMBInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpACDInit();
-  if (iVar1 == 0) {
+  result = pwpACDInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpAMGInit();
-  if (iVar1 == 0) {
+  result = pwpAMGInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpOppSfxInit();
-  if (iVar1 == 0) {
+  result = pwpOppSfxInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = pwpWaterSfxInit();
-  return (uint)(iVar1 != 0);
+  result = pwpWaterSfxInit();
+  return (uint)(result != 0);
 }
-
-
-
 
 /* from: pwp_comm.cpp
    addr: 00415200 */
 
-void __fastcall pwpTerm(void)
+void pwpTerm(void) 
 
 {
   m3dTerm2DMatr();
@@ -84,12 +81,9 @@ void __fastcall pwpTerm(void)
   m3dTerm2DMatr();
   m3dTerm2DMatr();
   m3dTerm2DMatr();
-  m3dTerm2DMatr();
+  m3dTerm2DMatr(); 
   return;
 }
-
-
-
 
 /* from: pwp_comm.cpp
    addr: 00415250 */
@@ -116,9 +110,6 @@ void __thiscall pwpWEAPON::Recharge(pwpWEAPON *this)
   return;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 004152A0 */
 
@@ -142,9 +133,6 @@ int __thiscall pwpWEAPON::SubtractAmmo(pwpWEAPON *this,float param_1)
   return 1;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 004152F0 */
 
@@ -156,14 +144,10 @@ void __thiscall pwpWEAPON::SetShootRate(pwpWEAPON *this,float param_1)
   return;
 }
 
-
-
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: pwp_comm.cpp
    addr: 00415310 */
 
-float __thiscall pwpWEAPON::GetDamage(pwpWEAPON *this)
+float pwpWEAPON::GetDamage(pwpWEAPON *this)
 
 {
   float fVar1;
@@ -177,14 +161,10 @@ float __thiscall pwpWEAPON::GetDamage(pwpWEAPON *this)
   return fVar1;
 }
 
-
-
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: pwp_comm.cpp
    addr: 00415340 */
 
-void __thiscall pwpWEAPON::AdjustTiming(pwpWEAPON *this)
+void pwpWEAPON::AdjustTiming(pwpWEAPON *this)
 
 {
   int iVar1;
@@ -254,14 +234,10 @@ void __thiscall pwpWEAPON::AdjustTiming(pwpWEAPON *this)
   return;
 }
 
-
-
-
-/* WARNING: Removing unreachable block (ram,0x0041592f) */
 /* from: pwp_comm.cpp
    addr: 00415520 */
 
-int __thiscall pwpWEAPON::SetupAniSystem(pwpWEAPON *this)
+int pwpWEAPON::SetupAniSystem(pwpWEAPON *this)
 
 {
   animTPL *paVar1;
@@ -385,14 +361,10 @@ int __thiscall pwpWEAPON::SetupAniSystem(pwpWEAPON *this)
   return 1;
 }
 
-
-
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: pwp_comm.cpp
    addr: 00415970 */
 
-int __thiscall pwpWEAPON::ProcessINIT(pwpWEAPON *this)
+int pwpWEAPON::ProcessINIT(pwpWEAPON *this)
 
 {
   undefined4 uVar1;
@@ -460,13 +432,10 @@ int __thiscall pwpWEAPON::ProcessINIT(pwpWEAPON *this)
   return 1;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415B40 */
 
-int __thiscall objFILTER_SET_TRANSP_LAST::IsUse(objFILTER_SET_TRANSP_LAST *this,objOBJ *param_1)
+int objFILTER_SET_TRANSP_LAST::IsUse(objFILTER_SET_TRANSP_LAST *this,objOBJ *param_1)
 
 {
   if (((byte)param_1[0x24] & 0x20) != 0) {
@@ -475,13 +444,10 @@ int __thiscall objFILTER_SET_TRANSP_LAST::IsUse(objFILTER_SET_TRANSP_LAST *this,
   return 0;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415B60 */
 
-int __thiscall pwpWEAPON::ProcessINIT_LEVEL(pwpWEAPON *this)
+int pwpWEAPON::ProcessINIT_LEVEL(pwpWEAPON *this)
 
 {
   int iVar1;
@@ -499,13 +465,10 @@ int __thiscall pwpWEAPON::ProcessINIT_LEVEL(pwpWEAPON *this)
   return 1;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415BB0 */
 
-void __thiscall pwpWEAPON::ProcessFRAME(pwpWEAPON *this)
+void pwpWEAPON::ProcessFRAME(pwpWEAPON *this)
 
 {
   wpnWEAPON::ProcessFRAME((wpnWEAPON *)this);
@@ -516,13 +479,10 @@ void __thiscall pwpWEAPON::ProcessFRAME(pwpWEAPON *this)
   return;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415BE0 */
 
-int __thiscall pwpWEAPON::IsShooting(pwpWEAPON *this)
+int pwpWEAPON::IsShooting(pwpWEAPON *this)
 
 {
   int iVar1;
@@ -534,13 +494,10 @@ int __thiscall pwpWEAPON::IsShooting(pwpWEAPON *this)
   return (uint)(iVar1 != 0);
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415C10 */
 
-int __thiscall pwpWEAPON::IsReadyRecharge(pwpWEAPON *this)
+int pwpWEAPON::IsReadyRecharge(pwpWEAPON *this)
 
 {
   int iVar1;
@@ -549,13 +506,10 @@ int __thiscall pwpWEAPON::IsReadyRecharge(pwpWEAPON *this)
   return (uint)(iVar1 != 0);
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415C30 */
 
-void __thiscall pwpWEAPON::SetZoom(pwpWEAPON *this,int param_1)
+void pwpWEAPON::SetZoom(pwpWEAPON *this,int param_1)
 
 {
   if (param_1 != 0) {
@@ -566,13 +520,10 @@ void __thiscall pwpWEAPON::SetZoom(pwpWEAPON *this,int param_1)
   return;
 }
 
-
-
-
 /* from: pwp_comm.cpp
    addr: 00415C60 */
 
-void __thiscall pwpWEAPON::UpdateSound(pwpWEAPON *this)
+void pwpWEAPON::UpdateSound(pwpWEAPON *this)
 
 {
   undefined4 uVar1;
@@ -583,10 +534,6 @@ void __thiscall pwpWEAPON::UpdateSound(pwpWEAPON *this)
   return;
 }
 
-
-
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: pwp_comm.cpp
    addr: 00415C80 */
 
