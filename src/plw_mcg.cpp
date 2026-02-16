@@ -6,14 +6,14 @@ int pwpMCGInit(void)
 {
   int result;
   
-  result = entRegisterClass(s_pwp_mcg, PMCG, 0x50, pwpMACHINEGUN::Create, NULL , 1);
+  result = entRegisterClass(pwp_mcg, PMCG, 0x50, pwpMACHINEGUN::Create, NULL, 1);
   return (uint)(result != 0);
 }
 
 /* from: plw_mcg.cpp
    addr: 0040E600 */
 
-int __thiscall pwpMACHINEGUN::ProcessINIT(pwpMACHINEGUN *this)
+int pwpMACHINEGUN::ProcessINIT(pwpMACHINEGUN *this)
 
 {
   int iVar1;
@@ -26,14 +26,14 @@ int __thiscall pwpMACHINEGUN::ProcessINIT(pwpMACHINEGUN *this)
   *(undefined4 *)(this + 0x18b) = 0xffffffff;
   *(undefined4 *)(this + 399) = 0xffffffff;
   *(undefined4 *)(this + 0x197) = 0;
-  (**(code **)(*(int *)this + 0xa0))(0x41200000);
-  *(undefined4 *)(this + 0x15b) = 0x40c00000;
-  *(undefined4 *)(this + 0x157) = 0x447a0000;
+  (**(code **)(*(int *)this + 0xa0))(0x41200000); // 10.0f shootrate, shoots 10 bullets per second
+  *(undefined4 *)(this + 0x15b) = 0x40c00000; // 6.0f damage if shot
+  *(undefined4 *)(this + 0x157) = 0x447a0000; // 1000.0f max limit ammo for the machinegun
   wpnWEAPON::SetAmmo((wpnWEAPON *)this,0.0);
   *(undefined4 *)(this + 0x1c3) = 0;
   *(undefined4 *)(this + 0x1cb) = 0;
-  (**(code **)(*(int *)this + 0xd4))(0x3f666666);
-  (**(code **)(*(int *)this + 0xdc))(0x3f4ccccd);
+  (**(code **)(*(int *)this + 0xd4))(0x3f666666); // size of the glow sfx when you shoot, "0.899999976158142f"
+  (**(code **)(*(int *)this + 0xdc))(0x3f4ccccd); // size of the smoke particle when you shoot, "0.800000011920929f"
   this_00 = (m3dSPL *)operator_new(0x34);
   if (this_00 == (m3dSPL *)0x0) {
     this_00 = (m3dSPL *)0x0;
@@ -416,4 +416,5 @@ entENTITY * __fastcall pwpMACHINEGUN::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
