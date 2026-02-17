@@ -119,9 +119,7 @@ void __thiscall pwpMACHINEGUN::ShowSFX(pwpMACHINEGUN *this,pwpMCG_SHOOT *param_1
 /* from: plw_mcg.cpp
    addr: 0040E790 */
 
-int __thiscall
-pwpMACHINEGUN::FillCDTShootList
-          (pwpMACHINEGUN *this,m3dV *param_1,cdtINFO *param_2,cdtINFO *param_3,int param_4)
+int pwpMACHINEGUN::FillCDTShootList(pwpMACHINEGUN *this,m3dV *param_1,cdtINFO *param_2,cdtINFO *param_3,int param_4)
 
 {
   float *pfVar1;
@@ -416,5 +414,6 @@ entENTITY * __fastcall pwpMACHINEGUN::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
 
