@@ -147,18 +147,16 @@ void __thiscall pwpWEAPON::SetShootRate(pwpWEAPON *this,float param_1)
 /* from: pwp_comm.cpp
    addr: 00415310 */
 
-float pwpWEAPON::GetDamage(pwpWEAPON *this)
-
+float pwpWEAPON::GetDamage()
 {
-  float baseDamage;
-  bool QuadActive; // was int, now bool
-  
-  baseDamage = *(float *)(this + 0x15b); // 0x15b = damage
-  QuadActive = plrPLAYER_COMMON::IsActivePowerup(*(plrPLAYER_COMMON **)(this + 0x187),0); // checks if titan damage is active, (ID 0)
-  if (QuadActive != 0) {
-    return baseDamage * 4.0f; // if active, multiply by 4x. |0x40800000|
-  }
-  return bestDamage;
+    float baseDamage = this->damage; // 0x15b
+    bool quadActive = this->owner->IsActivePowerup(0); // ID 0 = Titan Damage
+
+    if (quadActive != false)
+    {
+        return baseDamage * 4.0f;
+    }
+    return baseDamage;
 }
 
 /* from: pwp_comm.cpp
@@ -545,5 +543,6 @@ int __thiscall pwpWEAPON::IsEmpty(pwpWEAPON *this)
   }
   return 0;
 }
+
 
 
