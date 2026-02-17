@@ -154,8 +154,8 @@ float pwpWEAPON::GetDamage(pwpWEAPON *this)
   bool QuadActive; // was int, now bool
   
   baseDamage = *(float *)(this + 0x15b); // 0x15b = damage
-  isQuadActive = plrPLAYER_COMMON::IsActivePowerup(*(plrPLAYER_COMMON **)(this + 0x187),0); // checks if titan damage is active, (ID 0)
-  if (isQuadActive != 0) {
+  QuadActive = plrPLAYER_COMMON::IsActivePowerup(*(plrPLAYER_COMMON **)(this + 0x187),0); // checks if titan damage is active, (ID 0)
+  if (QuadActive != 0) {
     return baseDamage * 4.0f; // if active, multiply by 4x. |0x40800000|
   }
   return bestDamage;
@@ -545,4 +545,5 @@ int __thiscall pwpWEAPON::IsEmpty(pwpWEAPON *this)
   }
   return 0;
 }
+
 
