@@ -150,11 +150,11 @@ void __thiscall pwpWEAPON::SetShootRate(pwpWEAPON *this,float param_1)
 float pwpWEAPON::GetDamage()
 {
     float baseDamage = this->damage; // 0x15b
-    bool quadActive = this->owner->IsActivePowerup(0); // ID 0 = Titan Damage
+    bool quadActive = this->owner->IsActivePowerup(0); // checks if owner has titan damage active. (ID 0)
 
     if (quadActive != false)
     {
-        return baseDamage * 4.0f;
+        return baseDamage * 4.0f; // |0x4080000| 
     }
     return baseDamage;
 }
@@ -543,6 +543,7 @@ int __thiscall pwpWEAPON::IsEmpty(pwpWEAPON *this)
   }
   return 0;
 }
+
 
 
 
