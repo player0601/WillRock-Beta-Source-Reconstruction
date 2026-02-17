@@ -1,13 +1,13 @@
 /* from: plw_clt.cpp
    addr: 0040B850 */
 
-int __fastcall pwpCLTInit(void)
+int pwpCLTInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_pwp_clt,0x50434c54,0x50,pwpCOLT::Create,(char *)0x0,1);
-  return (uint)(iVar1 != 0);
+  result = entRegisterClass(pwp_clt, PCLT, 0x50, pwpCOLT::Create, NULL, 1);
+  return (uint)(result != 0);
 }
 
 
@@ -91,7 +91,7 @@ int __thiscall pwpCOLT::ProcessINIT(pwpCOLT *this)
   *(uint *)(this + 0x14f) = *(uint *)(this + 0x14f) | 4;
   *(uint *)(this + 0x193) = *(uint *)(this + 0x193) | 2;
   (**(code **)(*(int *)this + 0xa0))(0);
-  *(undefined4 *)(this + 0x15b) = 0x41200000;
+  *(undefined4 *)(this + 0x15b) = 0x41200000; 
   (**(code **)(*(int *)this + 0xd4))(0x3f800000);
   this_00 = (m3dSPL *)operator_new(0x34);
   if (this_00 == (m3dSPL *)0x0) {
@@ -392,3 +392,4 @@ entENTITY * __fastcall pwpCOLT::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
