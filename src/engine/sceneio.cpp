@@ -162,7 +162,7 @@ int sioReadTemplate(animTPL* tpl, bool loadTexture)
   if (tpl->magic != ATPL) { // magic header for TPL format (0x4154504c)
     return 0;
   }
-  if (loadTextures != 0) {
+  if (loadTexture != 0) {
     result = sioReadTex();
     if (result == 0) {
       return 0;
@@ -201,7 +201,7 @@ int sioReadTemplate(animTPL* tpl, bool loadTexture)
   if (result == 0) {
     return 0;
   }
-  if (loadTextures != 0) {
+  if (loadTexture != 0) {
     apFree(sioTexListNmb);
     sioTexListNmb = NULL;
   }
