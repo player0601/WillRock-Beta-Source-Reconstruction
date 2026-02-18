@@ -1,5 +1,5 @@
 #include "entity.h"
-#include "weapon.h"
+#include "pwp_comm.h"
 #include "m3d.h"
 
 /* from: plw_svl.cpp
@@ -1063,4 +1063,5 @@ entENTITY * __fastcall pwpSHOVEL::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
