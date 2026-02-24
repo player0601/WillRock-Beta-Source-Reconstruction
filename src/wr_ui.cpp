@@ -1677,39 +1677,38 @@ void __thiscall wrUI_WOOFER::ProcessINIT(wrUI_WOOFER *this)
 /* from: wr_ui.cpp
    addr: 004822F0 */
 
-int __thiscall
-wrUI_SKULL::ProcessMsg(wrUI_SKULL *this,int param_1,void *param_2,msgADDR *param_3,int *param_4)
+int wrUI_SKULL::ProcessMsg(wrUI_SKULL *this,int messageType,void *param_2,msgADDR *param_3,int *param_4)
 
 {
-  objOBJ *poVar1;
-  objMOD_TEX_FRAME_ANIM *poVar2;
-  float extraout_ECX;
-  float extraout_ECX_00;
-  float fVar3;
-  int iVar4;
-  float fVar5;
-  float fVar6;
-  int iVar7;
+  objOBJ *skullObj;
+  objMOD_TEX_FRAME_ANIM *texAnimMod;
+  float randSeedFallback;
+  float randSeedInit;
+  float randSeed;
+  int frameCount;
+  float animWidth;
+  float animHeight;
+  int isLoop;
   
-  if (param_1 == 1) {
-    poVar1 = objFindNameN(*(objOBJ **)(*(int *)(this + 0xbc) + 0x10),s_cherep,6);
-    if (poVar1 != (objOBJ *)0x0) {
-      poVar2 = (objMOD_TEX_FRAME_ANIM *)operator_new(0x4c);
-      if (poVar2 == (objMOD_TEX_FRAME_ANIM *)0x0) {
-        poVar2 = (objMOD_TEX_FRAME_ANIM *)0x0;
-        fVar3 = extraout_ECX;
+  if (messageType == 1) {
+    skullObj = objFindNameN(*(objOBJ **)(*(int *)(this + 0xbc) + 0x10), cherep, 6);
+    if (skullObj != (objOBJ *)0x0) {
+      texAnimMod = (objMOD_TEX_FRAME_ANIM *)operator_new(0x4c);
+      if (texAnimMod == (objMOD_TEX_FRAME_ANIM *)0x0) {
+        texAnimMod = (objMOD_TEX_FRAME_ANIM *)0x0;
+        randSeed = randSeedFallback;
       }
       else {
-        poVar2 = (objMOD_TEX_FRAME_ANIM *)objMOD_TEX_FRAME_ANIM::objMOD_TEX_FRAME_ANIM(poVar2,0);
-        fVar3 = extraout_ECX_00;
+        texAnimMod = (objMOD_TEX_FRAME_ANIM *)objMOD_TEX_FRAME_ANIM::objMOD_TEX_FRAME_ANIM(texAnimMod, 0);
+        randSeed = randSeedInit;
       }
-      iVar7 = 1;
-      fVar6 = 128.0;
-      fVar5 = 128.0;
-      iVar4 = 0x10;
-      fVar3 = m3dRandMax(fVar3);
-      objMOD_TEX_FRAME_ANIM::SetParams(poVar2,4,4,2.0,fVar3,iVar4,fVar5,fVar6,iVar7);
-      (**(code **)(*(int *)poVar2 + 4))(poVar1);
+      isLoop = 1; // if disabled, loops once then stops
+      animHeight = 128.0f;
+      animWidth = 128.0f;
+      frameCount = 16;
+      randSeed = m3dRandMax(randSeed);
+      objMOD_TEX_FRAME_ANIM::SetParams(texAnimMod, 4, 4, 2.0f, randSeed, frameCount, animWidth, animHeight, isLoop); // 4x4 frames, 2.0 speed multiplier (below=fast, above=slow)
+      (**(code **)(*(int *)texAnimMod + 4))(skullObj);
     }
   }
   return 0;
@@ -5817,5 +5816,6 @@ uiELEMENT * __fastcall wrUI_COMICS_FRAME::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
 
