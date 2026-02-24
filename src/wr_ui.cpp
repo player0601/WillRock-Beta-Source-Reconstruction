@@ -1702,7 +1702,7 @@ int wrUI_SKULL::ProcessMsg(wrUI_SKULL *this,int messageType,void *param_2,msgADD
         texAnimMod = (objMOD_TEX_FRAME_ANIM *)objMOD_TEX_FRAME_ANIM::objMOD_TEX_FRAME_ANIM(texAnimMod, 0);
         randSeed = randSeedInit;
       }
-      isLoop = 1; // if disabled, loops once then stops
+      isLoop = 1; // if disabled, animates once then stops
       animHeight = 128.0f;
       animWidth = 128.0f;
       frameCount = 16;
@@ -5816,6 +5816,7 @@ uiELEMENT * __fastcall wrUI_COMICS_FRAME::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
 
 
