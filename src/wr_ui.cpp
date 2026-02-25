@@ -1671,9 +1671,6 @@ void __thiscall wrUI_WOOFER::ProcessINIT(wrUI_WOOFER *this)
   return;
 }
 
-
-
-
 /* from: wr_ui.cpp
    addr: 004822F0 */
 
@@ -1686,8 +1683,8 @@ int wrUI_SKULL::ProcessMsg(wrUI_SKULL *this,int messageType,void *param_2,msgADD
   float randSeedInit;
   float randSeed;
   int frameCount;
-  float animWidth;
-  float animHeight;
+  float frameWidth;
+  float frameHeight;
   int isLoop;
   
   if (messageType == 1) {
@@ -1703,19 +1700,16 @@ int wrUI_SKULL::ProcessMsg(wrUI_SKULL *this,int messageType,void *param_2,msgADD
         randSeed = randSeedInit;
       }
       isLoop = 1; // if disabled, animates once then stops
-      animHeight = 128.0f;
-      animWidth = 128.0f;
-      frameCount = 16;
+      frameHeight = 128.0f;
+      frameWidth = 128.0f;
+      frameCount = 16; // was originally 0x10
       randSeed = m3dRandMax(randSeed);
-      objMOD_TEX_FRAME_ANIM::SetParams(texAnimMod, 4, 4, 2.0f, randSeed, frameCount, animWidth, animHeight, isLoop); // 4x4 frames, 2.0 speed multiplier (below=fast, above=slow)
+      objMOD_TEX_FRAME_ANIM::SetParams(texAnimMod, 4, 4, 2.0f, randSeed, frameCount, frameWidth, frameHeight, isLoop); // 4x4 frames, 2.0 speed multiplier (below=fast, above=slow)
       (**(code **)(*(int *)texAnimMod + 4))(skullObj);
     }
   }
   return 0;
 }
-
-
-
 
 /* from: wr_ui.cpp
    addr: 00482370 */
@@ -5816,6 +5810,7 @@ uiELEMENT * __fastcall wrUI_COMICS_FRAME::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
 
 
