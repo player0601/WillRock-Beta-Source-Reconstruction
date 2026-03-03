@@ -1448,119 +1448,121 @@ wrUIHUD_WINDOW * __thiscall wrUIHUD_WINDOW::wrUIHUD_WINDOW(wrUIHUD_WINDOW *this)
 /* from: wr_ui_hud.cpp
    addr: 0048B640 */
 
-int __thiscall wrUIHUD_WINDOW::ProcessInit(wrUIHUD_WINDOW *this,void *param_1)
+int wrUIHUD_WINDOW::ProcessInit(wrUIHUD_WINDOW* this, uiINPUT_INFO* inputInfo)
 
 {
-  int iVar1;
-  txmTEXTURE *ptVar2;
-  int iVar3;
-  uiELEMENT *puVar4;
-  wrUIHUD_WINDOW *pwVar5;
-  char local_100 [256];
-  
-  ptVar2 = txmMANAGER::Add(txmManager,s_key_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0x98) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_helf_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0x9c) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_gold_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xdc) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_lopata_item_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xb0) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_pulia_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xb4) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_shotgun_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xb8) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_mashinegun_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xbc) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_minigun_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xd0) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_crossbow_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xc0) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_acid_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xc4) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_atomic_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xd8) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_bazooka_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 200) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_meduzagun_item_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xcc) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_pwp_bmb_ammo_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xd4) = ptVar2;
-  iVar3 = 0;
-  pwVar5 = this + 0xa0;
+  int pRender;
+  txmTEXTURE *pTexture;
+  int i;
+  uiELEMENT *pChildElement;
+  wrUIHUD_WINDOW *pSlotPtr;
+  char nameBuffer [256];
+
+  // initializes 4x4 icons 
+  pTexture = txmMANAGER::Add(txmManager, key_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + keyTex) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, helf_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + healthTex) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, gold_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + goldTex) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, lopata_item_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoShovel) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, pulia_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoPistol) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, shotgun_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoShotgun) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, mashinegun_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoMCG) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, minigun_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoMinigun) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, crossbow_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoCrossbow) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, acid_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoAcid) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, atomic_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoAtomic) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, bazooka_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoBazooka) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, meduzagun_item_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoMeduza) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, pwp_bmb_ammo_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + ammoBomb) = pTexture;
+  i = 0;
+  pSlotPtr = this + armorTex;
   do {
-    iVar3 = iVar3 + 1;
-    sprintf(local_100,s_armor_i_4x4,iVar3);
-    ptVar2 = txmMANAGER::Add(txmManager,local_100,0,0xffffffff);
-    *(txmTEXTURE **)pwVar5 = ptVar2;
-    pwVar5 = pwVar5 + 4;
-  } while (iVar3 < 4);
-  ptVar2 = txmMANAGER::Add(txmManager,s_power_qdam_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xe0) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_power_shield_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xe4) = ptVar2;
-  ptVar2 = txmMANAGER::Add(txmManager,s_power_chasi_4x4,0,0xffffffff);
-  *(txmTEXTURE **)(this + 0xe8) = ptVar2;
-  iVar3 = 0;
-  pwVar5 = this + 0x84;
+    i = i + 1;
+    sprintf(nameBuffer, armor_i_4x4, i);
+    pTexture = txmMANAGER::Add(txmManager, nameBuffer, 0, 0xffffffff);
+    *(txmTEXTURE **)pSlotPtr = pTexture;
+    pSlotPtr = pSlotPtr + 4;
+  } while (i < 4);
+  pTexture = txmMANAGER::Add(txmManager, power_qdam_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + powerQDam) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, power_shield_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + powerShield) = pTexture;
+  pTexture = txmMANAGER::Add(txmManager, power_chasi_4x4, 0, 0xffffffff);
+  *(txmTEXTURE **)(this + powerChasi) = pTexture;
+  i = 0;
+  pSlotPtr = this + 0x84;
   do {
-    iVar3 = iVar3 + 1;
-    sprintf(local_100,s_powerup_02i,iVar3);
-    puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,local_100);
-    *(uiELEMENT **)pwVar5 = puVar4;
-    *(undefined4 *)(puVar4 + 0x128) = 0xffffffff;
-    if (*(int *)(pwVar5 + 0x5c) != *(int *)(*(int *)(*(int *)pwVar5 + 0x118) + 0xf4)) {
-      *(int *)(*(int *)(*(int *)pwVar5 + 0x118) + 0xf4) = *(int *)(pwVar5 + 0x5c);
+    i = i + 1;
+    sprintf(nameBuffer, powerup_02i, i);
+    pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this,nameBuffer);
+    *(uiELEMENT **)pSlotPtr = pChildElement;
+    *(undefined4 *)(pChildElement + 0x128) = 0xffffffff;
+    if (*(int *)(pSlotPtr + 0x5c) != *(int *)(*(int *)(*(int *)pSlotPtr + 0x118) + 0xf4)) {
+      *(int *)(*(int *)(*(int *)pSlotPtr + 0x118) + 0xf4) = *(int *)(pSlotPtr + 0x5c);
     }
-    pwVar5 = pwVar5 + 4;
-  } while (iVar3 < 3);
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_key_bar);
-  *(uiELEMENT **)(this + 0x6c) = puVar4;
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_boss_bar);
-  *(uiELEMENT **)(this + 0x80) = puVar4;
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_health_bar);
-  *(uiELEMENT **)(this + 0x70) = puVar4;
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_armor_bar);
-  *(uiELEMENT **)(this + 0x74) = puVar4;
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_money_bar);
-  *(uiELEMENT **)(this + 0x78) = puVar4;
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_ammo_bar);
-  *(uiELEMENT **)(this + 0x7c) = puVar4;
-  puVar4 = uiELEMENT::FindChildElement((uiELEMENT *)this,s_underwater);
-  *(uiELEMENT **)(this + 0x90) = puVar4;
-  *(undefined4 *)(*(int *)(this + 0x6c) + 0x128) = 0;
-  *(undefined4 *)(*(int *)(this + 0x80) + 0x128) = 0;
-  *(undefined4 *)(*(int *)(this + 0x70) + 0x128) = 0;
-  *(undefined4 *)(*(int *)(this + 0x74) + 0x128) = 0;
-  *(undefined4 *)(*(int *)(this + 0x78) + 0x128) = 0;
-  *(undefined4 *)(*(int *)(this + 0x7c) + 0x128) = 0;
-  if (*(int *)(this + 0x9c) != *(int *)(*(int *)(*(int *)(this + 0x70) + 0x118) + 0xf4)) {
-    *(int *)(*(int *)(*(int *)(this + 0x70) + 0x118) + 0xf4) = *(int *)(this + 0x9c);
+    pSlotPtr = pSlotPtr + 4;
+  } while (i < 3);
+  // initializes bar icons
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, key_bar);
+  *(uiELEMENT **)(this + keyBar) = pChildElement;
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, boss_bar);
+  *(uiELEMENT **)(this + bossBar) = pChildElement;
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, health_bar);
+  *(uiELEMENT **)(this + healthBar) = pChildElement;
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, armor_bar);
+  *(uiELEMENT **)(this + armorBar) = pChildElement;
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, money_bar);
+  *(uiELEMENT **)(this + moneyBar) = pChildElement;
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, ammo_bar);
+  *(uiELEMENT **)(this + ammoBar) = pChildElement;
+  pChildElement = uiELEMENT::FindChildElement((uiELEMENT *)this, underwater);
+  *(uiELEMENT **)(this + underwaterBar) = pChildElement;
+  *(undefined4 *)(*(int *)(this + keyBar) + 0x128) = 0;
+  *(undefined4 *)(*(int *)(this + bossBar) + 0x128) = 0;
+  *(undefined4 *)(*(int *)(this + healthBar) + 0x128) = 0;
+  *(undefined4 *)(*(int *)(this + armorBar) + 0x128) = 0;
+  *(undefined4 *)(*(int *)(this + moneyBar) + 0x128) = 0;
+  *(undefined4 *)(*(int *)(this + ammoBar) + 0x128) = 0;
+  // assigns 4x4 icons into bars
+  if (*(int *)(this + healthTex) != *(int *)(*(int *)(*(int *)(this + healthBar) + 0x118) + 0xf4)) {
+    *(int *)(*(int *)(*(int *)(this + healthBar) + 0x118) + 0xf4) = *(int *)(this + healthTex);
   }
-  if (*(int *)(this + 0xa0) != *(int *)(*(int *)(*(int *)(this + 0x74) + 0x118) + 0xf4)) {
-    *(int *)(*(int *)(*(int *)(this + 0x74) + 0x118) + 0xf4) = *(int *)(this + 0xa0);
+  if (*(int *)(this + armorTex) != *(int *)(*(int *)(*(int *)(this + armorBar) + 0x118) + 0xf4)) {
+    *(int *)(*(int *)(*(int *)(this + armorBar) + 0x118) + 0xf4) = *(int *)(this + armorTex);
   }
-  if (*(int *)(this + 0xdc) != *(int *)(*(int *)(*(int *)(this + 0x78) + 0x118) + 0xf4)) {
-    *(int *)(*(int *)(*(int *)(this + 0x78) + 0x118) + 0xf4) = *(int *)(this + 0xdc);
+  if (*(int *)(this + goldTex) != *(int *)(*(int *)(*(int *)(this + moneyBar) + 0x118) + 0xf4)) {
+    *(int *)(*(int *)(*(int *)(this + moneyBar) + 0x118) + 0xf4) = *(int *)(this + goldTex);
   }
-  if (*(int *)(this + 0xb0) != *(int *)(*(int *)(*(int *)(this + 0x7c) + 0x118) + 0xf4)) {
-    *(int *)(*(int *)(*(int *)(this + 0x7c) + 0x118) + 0xf4) = *(int *)(this + 0xb0);
+  if (*(int *)(this + ammoShovel) != *(int *)(*(int *)(*(int *)(this + ammoBar) + 0x118) + 0xf4)) {
+    *(int *)(*(int *)(*(int *)(this + ammoBar) + 0x118) + 0xf4) = *(int *)(this + ammoShovel);
   }
-  if (*(int *)(this + 0x9c) != *(int *)(*(int *)(*(int *)(this + 0x80) + 0x118) + 0xf4)) {
-    *(int *)(*(int *)(*(int *)(this + 0x80) + 0x118) + 0xf4) = *(int *)(this + 0x9c);
+  if (*(int *)(this + healthTex) != *(int *)(*(int *)(*(int *)(this + bossBar) + 0x118) + 0xf4)) {
+    *(int *)(*(int *)(*(int *)(this + bossBar) + 0x118) + 0xf4) = *(int *)(this + healthTex);
   }
-  iVar3 = *(int *)(this + 0x6c);
-  iVar1 = *(int *)(iVar3 + 0x118);
-  *(uint *)(iVar1 + 0x40) = *(uint *)(iVar1 + 0x40) | 8;
-  uiRENDER_ELEM::SetTextId(*(uiRENDER_ELEM **)(iVar3 + 0x118),1);
-  if (*(int *)(this + 0x98) != *(int *)(*(int *)(*(int *)(this + 0x6c) + 0x118) + 0xf4)) {
-    *(int *)(*(int *)(*(int *)(this + 0x6c) + 0x118) + 0xf4) = *(int *)(this + 0x98);
+  i = *(int *)(this + keyBar);
+  pRender = *(int *)(i + 0x118);
+  *(uint *)(pRender + 0x40) = *(uint *)(pRender + 0x40) | 8;
+  uiRENDER_ELEM::SetTextId(*(uiRENDER_ELEM **)(i + 0x118),1);
+  if (*(int *)(this + keyTex) != *(int *)(*(int *)(*(int *)(this + keyBar) + 0x118) + 0xf4)) {
+    *(int *)(*(int *)(*(int *)(this + keyBar) + 0x118) + 0xf4) = *(int *)(this + keyTex);
   }
   *(undefined4 *)(this + 0x94) = 1;
-  iVar3 = uiELEMENT::OnChar((uiELEMENT *)this,(uiINPUT_INFO *)param_1);
-  return iVar3;
+  i = uiELEMENT::OnChar((uiELEMENT *)this,(uiINPUT_INFO *)inputInfo);
+  return i;
 }
-
 
 
 
@@ -2229,6 +2231,7 @@ uiELEMENT * __fastcall wrUIHUD_SP_WINDOW::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
 
 
