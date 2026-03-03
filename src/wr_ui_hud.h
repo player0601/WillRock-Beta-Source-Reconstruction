@@ -24,12 +24,13 @@ class wrUIHUD_WINDOW : public uiELEMENT
     txmTEXTURE* ammoMCG;      // 0xBC
     txmTEXTURE* ammoCrossbow; // 0xC0
     txmTEXTURE* ammoAcid;     // 0xC4
+    txmTEXTURE* ammoBazooka;  // 0xC8
     txmTEXTURE* ammoMeduza;   // 0xCC
     txmTEXTURE* ammoMinigun;  // 0xD0
     txmTEXTURE* ammoBomb;     // 0xD4
     txmTEXTURE* ammoAtomic;   // 0xD8
-
     txmTEXTURE* goldTex;      // 0xDC
+
     txmTEXTURE* powerQDam;    // 0xE0
     txmTEXTURE* powerShield;  // 0xE4
     txmTEXTURE* powerChasi;   // 0xE8
