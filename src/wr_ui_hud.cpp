@@ -1442,9 +1442,6 @@ wrUIHUD_WINDOW * __thiscall wrUIHUD_WINDOW::wrUIHUD_WINDOW(wrUIHUD_WINDOW *this)
   return this;
 }
 
-
-
-
 /* from: wr_ui_hud.cpp
    addr: 0048B640 */
 
@@ -1559,14 +1556,11 @@ int wrUIHUD_WINDOW::ProcessInit(wrUIHUD_WINDOW* this, uiINPUT_INFO* inputInfo)
   if (*(int *)(this + keyTex) != *(int *)(*(int *)(*(int *)(this + keyBar) + 0x118) + 0xf4)) {
     *(int *)(*(int *)(*(int *)(this + keyBar) + 0x118) + 0xf4) = *(int *)(this + keyTex);
   }
-  *(undefined4 *)(this + 0x94) = 1;
+  *(undefined4 *)(this + initFlag) = 1;
   i = uiELEMENT::OnChar((uiELEMENT *)this,(uiINPUT_INFO *)inputInfo);
   return i;
 }
 
-
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: wr_ui_hud.cpp
    addr: 0048BA40 */
 
@@ -1596,8 +1590,8 @@ int __thiscall wrUIHUD_WINDOW::ProcessUpdate(wrUIHUD_WINDOW *this,void *param_1)
   }
   if ((*(uint *)(this + 4) & 0x2000) != 0) goto LAB_0048c5b2;
   if (*(int *)(this + 0x6c) != 0) {
-    puVar1 = (uint *)(*(int *)(this + 0x6c) + 4);
-    *puVar1 = *puVar1 | 0x2000;
+    puVar1 = (uint *)(*(int *)(this + 0x6c) + 4); 
+    *puVar1 = *puVar1 | 0x2000; // intentionally disables key_bar and its icon from being displayed on the HUD
   }
   *(uint *)(this + 0x94) = *(uint *)(this + 0x94) | ~*(uint *)(*(int *)(this + 0x80) + 4) >> 0xd & 1
   ;
@@ -2231,6 +2225,7 @@ uiELEMENT * __fastcall wrUIHUD_SP_WINDOW::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
 
 
