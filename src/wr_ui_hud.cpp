@@ -1,4 +1,3 @@
-
 /* from: wr_ui_hud.cpp
    addr: 004896A0 */
 
@@ -2230,5 +2229,6 @@ uiELEMENT * __fastcall wrUIHUD_SP_WINDOW::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
 
