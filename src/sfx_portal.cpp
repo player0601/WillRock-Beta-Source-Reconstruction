@@ -61,7 +61,6 @@ entENTITY * __fastcall wrsfxPORTAL::Create(animINST *param_1)
 
 
 /* from: sfx_portal.cpp
-   addr: 00475100
    addr: 00475100 */
 
 void * __thiscall wrsfxPORTAL::_scalar_deleting_destructor_(wrsfxPORTAL *this,uint param_1)
@@ -103,21 +102,6 @@ pteSHADER * __fastcall wrsfxPORTAL_VIEW::Create(animINST *param_1,objOBJ *param_
 
 
 /* from: sfx_portal.cpp
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
-   addr: 004751A0
    addr: 004751A0 */
 
 void * __thiscall
@@ -198,8 +182,6 @@ void __thiscall wrsfxPORTAL_VIEW::Update(wrsfxPORTAL_VIEW *this,float param_1)
 
 
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* from: sfx_portal.cpp
    addr: 00475280 */
 
@@ -724,4 +706,5 @@ void __thiscall wrsfxPORTAL::Enable(wrsfxPORTAL *this,int param_1)
   *(uint *)(this + 0x84) = *(uint *)(this + 0x84) | 2;
   return;
 }
+
 
