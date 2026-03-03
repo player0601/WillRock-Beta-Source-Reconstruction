@@ -2,53 +2,53 @@
 /* from: wr_ui_hud.cpp
    addr: 004896A0 */
 
-int __fastcall wruiHUDRegister(void)
+int wruiHUDRegister(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = uiElementRegister(s_wrh_iconbar,wrUIHUD_ICONBAR::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wrh_iconbar,wrUIHUD_ICONBAR::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_slider,wrUIHUD_SLIDER::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_slider,wrUIHUD_SLIDER::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wrh_msg,wrUIHUD_MSG::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wrh_msg,wrUIHUD_MSG::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wrh_scope_zoom,wrUIHUD_ZOOM::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wrh_scope_zoom,wrUIHUD_ZOOM::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_hud_wnd,wrUIHUD_WINDOW::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_hud_wnd,wrUIHUD_WINDOW::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_hud_uh_wnd,wrUIHUD_UH_WINDOW::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_hud_uh_wnd,wrUIHUD_UH_WINDOW::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_hud_mp_wnd,wrUIHUD_MP_WINDOW::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_hud_mp_wnd,wrUIHUD_MP_WINDOW::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_hud_coop_wnd,wrUIHUD_COOP_WINDOW::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_hud_coop_wnd,wrUIHUD_COOP_WINDOW::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_hud_th_wnd,wrUIHUD_TH_WINDOW::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_hud_th_wnd,wrUIHUD_TH_WINDOW::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wr_hud_sp_wnd,wrUIHUD_SP_WINDOW::Create);
-  if (iVar1 == 0) {
+  result = uiElementRegister(s_wr_hud_sp_wnd,wrUIHUD_SP_WINDOW::Create);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = uiElementRegister(s_wrh_dbg_msg,wrUIHUD_DBGMSG::Create);
-  return (uint)(iVar1 != 0);
+  result = uiElementRegister(s_wrh_dbg_msg,wrUIHUD_DBGMSG::Create);
+  return (uint)(result != 0);
 }
 
 
@@ -2230,4 +2230,5 @@ uiELEMENT * __fastcall wrUIHUD_SP_WINDOW::Create(void)
   }
   return (uiELEMENT *)0x0;
 }
+
 
