@@ -6,11 +6,11 @@
 ## Project Status
 - Many functions are decompiled but **offsets may need renaming**.  
 - Variable names are placeholders and need proper naming.  
-- Some structures, classes, and scripts are **incomplete** or **missing**.
+- Some functions are either **incomplete** or **missing**.
 
 ## Goals
 - Map decompiled code to the original source structure (.cpp, .h).  
-- Reconstruct class layouts, offsets, and method relationships.  
+- Reconstruct class layouts, offsets, and etc.  
 - Eventually produce a fully compilable build for research/modding purposes.
 
 ## Contributions
