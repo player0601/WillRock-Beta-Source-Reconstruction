@@ -2,6 +2,55 @@
 #include "ai_npc_wr.h"
 
 /* from: ai_mino.cpp
+   addr: 00447d20 */
+
+void InitMinoSounds(void)
+
+{
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiMinoSndList, mino_appear, 0, 0x40000, 0.0, 0);
+  _DAT_0060c2c0 = 0;
+  _DAT_0060c2c4 = 0;
+  _aiMinoSndList = (sncSOUND_DESCR_3D *)&sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c2c8, mino_regeneration, 0, 0, 0.0, 0);
+  _DAT_0060c328 = 0;
+  _DAT_0060c32c = 0;
+  _DAT_0060c2c8 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c330, mino_roar, 0, 0x10400, 0.0, 6000);
+  _DAT_0060c390 = 0;
+  _DAT_0060c394 = 0;
+  _DAT_0060c330 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c398, mino_death_1, 0, 0, 0.0, 0);
+  _DAT_0060c3f8 = 0;
+  _DAT_0060c3fc = 0;
+  _DAT_0060c398 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c400, mino_death_2, 0, 0,0.0, 0);
+  _DAT_0060c460 = 0;
+  _DAT_0060c464 = 0;
+  _DAT_0060c400 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c468, mino_hit, 0, 0x40000, 0.0, 0);
+  _DAT_0060c4c8 = 0;
+  _DAT_0060c4cc = 0;
+  _DAT_0060c468 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c4d0, char_explos, 0, 0x20000, 0.0, 0);
+  _DAT_0060c530 = 0;
+  _DAT_0060c534 = 0;
+  _DAT_0060c4d0 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c538, mino_ax_appear, 0, 0x40000, -10.0 , 0);
+  _DAT_0060c598 = 0;
+  _DAT_0060c59c = 0;
+  _DAT_0060c538 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&DAT_0060c5a0, mino_ax_slash, 0, 0x40000, 0.0, 0);
+  _DAT_0060c600 = 0;
+  _DAT_0060c604 = 0;
+  _DAT_0060c5a0 = &sncSOUND_DESCR_3D::`vftable';
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D
+            ((sncSOUND_DESCR_3D *)&DAT_0060c608, mino_statue_appear, 0, 0x40000, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D
+            ((sncSOUND_DESCR_3D *)&DAT_0060c670, mino_fall, 0, 0x40001, 0.0, 0, 0.0, 0.0);
+  return;
+}
+
+/* from: ai_mino.cpp
    addr: 00447F40 */
 
 int __fastcall aiMinoInit(void)
@@ -1704,5 +1753,6 @@ entENTITY * __fastcall aiMINO_ATRIUM::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
+
 
 
