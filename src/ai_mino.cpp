@@ -546,13 +546,13 @@ aiMINO::AdjustSpeedsOnFallbackStart(aiMINO *this,dmgWEAPON *param_1,float *param
 /* from: ai_mino.cpp
    addr: 00448B80 */
 
-int __thiscall aiMINO::IsArmoredObject(aiMINO *this,char *param_1)
+int aiMINO::IsArmoredObject(aiMINO *this,char *objName)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = strnicmp(param_1,s_SEKIRA,6);
-  return (uint)(iVar1 == 0);
+  result = strnicmp(objName, SEKIRA, 6);
+  return (result == 0);
 }
 
 
@@ -1753,6 +1753,3 @@ entENTITY * __fastcall aiMINO_ATRIUM::Create(animINST *param_1)
   }
   return (entENTITY *)0x0;
 }
-
-
-
