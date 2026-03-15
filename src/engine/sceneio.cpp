@@ -159,7 +159,7 @@ int sioReadTemplate(animTPL* tpl, bool loadTexture)
   fioFILE::Read(sioFilePtr, tpl->templateName, 0x40);
   fioFILE::Read(sioFilePtr, tpl->className, 0x40);
    
-  if (tpl->magic != ATPL) { // magic header for TPL format (0x4154504c)
+  if (tpl->magic != LPTA) { // magic header for TPL format (0x4154504c)
     return 0;
   }
   if (loadTexture != 0) {
