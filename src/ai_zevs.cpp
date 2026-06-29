@@ -1,17 +1,16 @@
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* from: ai_zevs.cpp
    addr: 00456490 */
 
-void __cdecl InitZeusSounds(void)
+void aiZevsSndList(void)
 
 {
   int iVar1;
   int iVar2;
   undefined4 *puVar3;
   sncSOUND_DESCR *this;
-  
-  apNAME::SetName((apNAME *)&DAT_0060df0c,s_zevs_being_hit);
+
+  // function is quite strange, bitting/swimming sounds, which dont exist in the beta
+  apNAME::SetName((apNAME *)&_aiZevsSndList,s_zevs_being_hit);
   _DAT_0060df4c = 0x40000;
   _DAT_0060df50 = 0;
   _DAT_0060df54 = 0;
@@ -22,7 +21,8 @@ void __cdecl InitZeusSounds(void)
   _DAT_0060df68 = 0;
   _DAT_0060df6c = 0;
   _DAT_0060df08 = &sncSOUND_DESCR_3D::_vftable_;
-  apNAME::SetName((apNAME *)&DAT_0060df74,s_zevs_death);
+   
+  apNAME::SetName((apNAME *)&_aiZevsSndDeath,s_zevs_death);
   _DAT_0060dfb4 = 0x40000;
   _DAT_0060dfb8 = 0;
   _DAT_0060dfbc = 0;
@@ -33,6 +33,7 @@ void __cdecl InitZeusSounds(void)
   _DAT_0060dfd0 = 0;
   _DAT_0060dfd4 = 0;
   _DAT_0060df70 = &sncSOUND_DESCR_3D::_vftable_;
+   
   apNAME::SetName((apNAME *)&DAT_0060dfdc,s_zevs_swim);
   _DAT_0060e01c = 0x40000;
   _DAT_0060e020 = 0;
@@ -44,6 +45,8 @@ void __cdecl InitZeusSounds(void)
   _DAT_0060e038 = 0;
   _DAT_0060e03c = 0;
   _DAT_0060dfd8 = &sncSOUND_DESCR_3D::_vftable_;
+
+  // *insert squidward bite gif*
   apNAME::SetName((apNAME *)&DAT_0060e044,s_zevs_bite);
   _DAT_0060e084 = 0x40000;
   _DAT_0060e088 = 0;
@@ -55,12 +58,15 @@ void __cdecl InitZeusSounds(void)
   _DAT_0060e0a0 = 0;
   _DAT_0060e0a4 = 0;
   _DAT_0060e040 = &sncSOUND_DESCR_3D::_vftable_;
+
+  // allocate 2 empty sound slots 
   iVar2 = 2;
   puVar3 = &DAT_0060e0a8;
   for (iVar1 = 0x34; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = 0;
+    *puVar3 = 0; // ...for it to be zeroed out and never used
     puVar3 = puVar3 + 1;
   }
+  // then init them as empty sound slots
   this = (sncSOUND_DESCR *)&DAT_0060e0a8;
   do {
     sncSOUND_DESCR::sncSOUND_DESCR(this);
@@ -73,9 +79,6 @@ void __cdecl InitZeusSounds(void)
   return;
 }
 
-
-
-
 /* from: ai_zevs.cpp
    addr: 00456610 */
 
@@ -84,7 +87,7 @@ int __fastcall aiZevsInit(void)
 {
   int iVar1;
   
-  iVar1 = entRegisterClass(s_ai_zevs,0x244e5043,0x32,aiZEVS::Create,s_ai_zevs,0);
+  iVar1 = entRegisterClass(ai_zevs, $NPC, 0x32, aiZEVS::Create, ai_zevs, 0);
   if (iVar1 == 0) {
     return 0;
   }
@@ -96,16 +99,13 @@ int __fastcall aiZevsInit(void)
   if (iVar1 == 0) {
     return 0;
   }
-  aiZEVS::pTexStars = txmMANAGER::Add(txmManager,s_sfx_zeus_death_stars,0x40003,1);
-  if (aiZEVS::pTexStars == (txmTEXTURE *)0x0) {
+  aiZEVS::pTexStars = txmMANAGER::Add(txmManager, sfx_zeus_death_stars, 0x40003, 1);
+  if (aiZEVS::pTexStars == NULL) {
     return 0;
   }
-  aiZEVS::pTexLgtn = txmMANAGER::Add(txmManager,s_sfx_zeus_death_lgtn,0x40003,1);
-  return (uint)(aiZEVS::pTexLgtn != (txmTEXTURE *)0x0);
+  aiZEVS::pTexLgtn = txmMANAGER::Add(txmManager, sfx_zeus_death_lgtn, 0x40003, 1);
+  return (uint)(aiZEVS::pTexLgtn != NULL);
 }
-
-
-
 
 /* from: ai_zevs.cpp
    addr: 004566A0 */
