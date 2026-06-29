@@ -4,7 +4,7 @@
 void aiGefestSndList(void)
 
 {
-  // reuses enemy sound effects
+  // reuses enemy sound effects as placeholder
   sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestSndList, satyr_being_hit, 0, 0x40000, 0.0, 1000);
   _DAT_0060b568 = 0;
   _DAT_0060b56c = 0;
@@ -65,7 +65,7 @@ int aiGefestInit(void)
 {
   int result;
   
-  result = entRegisterClass(s_ai_gefest,0x244e5043,0x32,aiGEFEST_GENERIC::Create,s_ai_gefest,0);
+  result = entRegisterClass(ai_gefest, $NPC, 0x32, aiGEFEST_GENERIC::Create, ai_gefest, 0);
   if (result == 0) {
     return 0;
   }
@@ -81,20 +81,20 @@ int aiGefestInit(void)
   if (result == 0) {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexScorchMark = txmMANAGER::Add(txmManager,sfx_ax_scorch_mark, 0x40003, 1);
-  if (aiGEFEST_GENERIC::pTexScorchMark == (txmTEXTURE *)0x0) {
+  aiGEFEST_GENERIC::pTexScorchMark = txmMANAGER::Add(txmManager, sfx_ax_scorch_mark, 0x40003, 1);
+  if (aiGEFEST_GENERIC::pTexScorchMark == NULL {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexCarbons = txmMANAGER::Add(txmManager,sfx_gefest_carbons ,0x40003, 1);
-  if (aiGEFEST_GENERIC::pTexCarbons == (txmTEXTURE *)0x0) {
+  aiGEFEST_GENERIC::pTexCarbons = txmMANAGER::Add(txmManager, sfx_gefest_carbons ,0x40003, 1);
+  if (aiGEFEST_GENERIC::pTexCarbons == NULL {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexCarbonExpl = txmMANAGER::Add(txmManager,sfx_gefest_carbon_expl, 0x40003, 1);
-  if (aiGEFEST_GENERIC::pTexCarbonExpl == (txmTEXTURE *)0x0) {
+  aiGEFEST_GENERIC::pTexCarbonExpl = txmMANAGER::Add(txmManager, sfx_gefest_carbon_expl, 0x40003, 1);
+  if (aiGEFEST_GENERIC::pTexCarbonExpl == NULL {
     return 0;
   }
-  aiGEFEST_GENERIC::pTexGlow = txmMANAGER::Add(txmManager,sfx_gefest_hit_glow, 0x40003, 1);
-  return (uint)(aiGEFEST_GENERIC::pTexGlow != (txmTEXTURE *)0x0);
+  aiGEFEST_GENERIC::pTexGlow = txmMANAGER::Add(txmManager, sfx_gefest_hit_glow, 0x40003, 1);
+  return (uint)(aiGEFEST_GENERIC::pTexGlow != NULL;
 }
 
 
