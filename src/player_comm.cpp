@@ -4,10 +4,10 @@
 void plrSndList(void)
 
 {
-  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndStep, player_step, 0, 0, -10.0, 0);
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndList, player_step, 0, 0, -10.0, 0);
   _DAT_00603688 = 0;
   _DAT_0060368c = 0;
-  plrSndStep = &sncSOUND_DESCR_3D::`vftable';
+  plrSndList = &sncSOUND_DESCR_3D::`vftable';
 
   sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndStepSand, player_step_sand, 0, 0, -10.0, 0);
   _DAT_006036f0 = 0;
@@ -57,10 +57,10 @@ void plrSndList(void)
 int __fastcall plrCommInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = sncLinkSndListData(0x13,(sncSOUND_DESCR_3D *)&DAT_00603628);
-  return (uint)(iVar1 != 0);
+  result = sncLinkSndListData(0x13,(sncSOUND_DESCR_3D *)&plrSndList); // DAT_00603628
+  return (uint)(result != 0);
 }
 
 
