@@ -1,4 +1,57 @@
 /* from: player_comm.cpp
+   addr: 004227C0 */
+
+void plrSndList(void)
+
+{
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndStep, player_step, 0, 0, -10.0, 0);
+  _DAT_00603688 = 0;
+  _DAT_0060368c = 0;
+  plrSndStep = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndStepSand, player_step_sand, 0, 0, -10.0, 0);
+  _DAT_006036f0 = 0;
+  _DAT_006036f4 = 0;
+  plrSndStepSand = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndStepMetal, player_step_metal, 0, 0, -10.0, 0);
+  _DAT_00603758 = 0;
+  _DAT_0060375c = 0;
+  plrSndStepMetal = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndStepWater, player_step_water, 0, 0, -10.0, 0);
+  _DAT_006037c0 = 0;
+  _DAT_006037c4 = 0;
+  plrSndStepWater = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndJump, player_jump, 0, 0, 0.0, 0);
+  _DAT_00603828 = 0;
+  _DAT_0060382c = 0;
+  plrSndJump = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&plrSndLand, player_land, 0, 0, 0.0, 0);
+  _DAT_00603890 = 0;
+  _DAT_00603894 = 0;
+  plrSndLand = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndLandWater, player_land_water, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndJumpStart, player_jump_start, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndJumpEnd, player_jump_end, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndChangeWpn, player_change_wpn, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndGetAmmo, player_get_ammo, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndGetHealth, player_get_health, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndGetKey, player_get_key, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndGetWeapon, player_get_weapon, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndGetTreasure, player_get_treasure, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndGetArmor, player_get_armor, 0, 0, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndBeingHit1, player_being_hit_1, 0, 0x4c0000, 0.0, 0x96, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndBeingHit2, player_being_hit_2, 0, 0x4c0000, 0.0, 0x96, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&plrSndDeath, player_death, 0, 0x180000, 0.0, 0, 0.0, 0.0);
+
+  return;
+}
+
+/* from: player_comm.cpp
    addr: 00422A70 */
 
 int __fastcall plrCommInit(void)
