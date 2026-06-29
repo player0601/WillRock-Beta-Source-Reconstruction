@@ -1,29 +1,85 @@
+/* from: ai_cyclop.cpp
+   addr: 0043AC00 */
+
+void aiCyclopSndList(void)
+
+{
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopSndList, cyclop_eat_stones, 0, 0x40000, 0.0, 0);
+  _DAT_0060af40 = 0;
+  _DAT_0060af44 = 0;
+  _aiCyclopSndList = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopDeath, cyclop_death, 0, 0x40000, 0.0, 0);
+  _DAT_0060afa8 = &DAT_42480000;
+  _DAT_0060afac = 0x43160000;
+  _aiCyclopDeath = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopBreakCage, cyclop_break_cage, 0, 0x40000, 0.0, 0);
+  _DAT_0060b010 = 0;
+  _DAT_0060b014 = 0;
+  _aiCyclopBreakCage = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopGetStones, cyclop_get_stones, 0, 0x40000, 0.0, 0);
+  _DAT_0060b078 = 0;
+  _DAT_0060b07c = 0;
+  _aiCyclopGetStones = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopHitGround, cyclop_hit_ground, 0, 0x40000, 0.0, 0);
+  _DAT_0060b0e0 = &DAT_42480000;
+  _DAT_0060b0e4 = 0x43160000;
+  _aiCyclopHitGround = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopRoar, cyclop_roar, 0, 0x40000, 0.0, 0);
+  _DAT_0060b148 = &DAT_42480000;
+  _DAT_0060b14c = 0x43160000;
+  _aiCyclopRoar = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopWalkStep1, cyclop_walk_step_1, 0, 0x40000, 0.0, 0);
+  _DAT_0060b1b0 = 0;
+  _DAT_0060b1b4 = 0;
+  _aiCyclopWalkStep1 = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiCyclopWalkStep2, cyclop_walk_step_2, 0, 0x40000, 0.0, 0);
+  _DAT_0060b218 = 0;
+  _DAT_0060b21c = 0;
+  _aiCyclopWalkStep2 = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopSpitStones, cyclop_spit_stones, 0, 0x40000, 0.0, 300, 50.0, 150.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopStoneFly, cyclop_stone_fly, 0, 0x40002, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopStoneHitGround1, cyclop_stone_hit_ground_1, 0, 0x40000, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopStoneHitGround2, cyclop_stone_hit_ground_2, 0, 0x40000, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopStoneHitGround3, cyclop_stone_hit_ground_3, 0, 0x40000, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopStoneHitGround4, cyclop_stone_hit_ground_4, 0, 0x40000, 0.0, 0, 0.0, 0.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiCyclopStoneHitBody, cyclop_stone_hit_body, 0, 0x60000, 0.0, 0, 0.0, 0.0);
+
+  return;
+}
 
 /* from: ai_cyclop.cpp
    addr: 0043AE90 */
 
-int __fastcall aiCyclopInit(void)
+int aiCyclopInit(void)
 
 {
-  int iVar1;
+  int result;
   
-  iVar1 = entRegisterClass(s_ai_cyclop,0x244e5043,0x32,aiCYCLOP::Create,s_ai_cyclop,0);
-  if (iVar1 == 0) {
+  result = entRegisterClass(s_ai_cyclop,0x244e5043,0x32,aiCYCLOP::Create,s_ai_cyclop,0);
+  if (result == 0) {
     return 0;
   }
-  iVar1 = aiCycStonePjlInit();
-  if (iVar1 == 0) {
+  result = aiCycStonePjlInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = wrsfxCyclopInit();
-  if (iVar1 == 0) {
+  result = wrsfxCyclopInit();
+  if (result == 0) {
     return 0;
   }
-  iVar1 = sncLinkSndListData(0xf,(sncSOUND_DESCR_3D *)&_aiCyclopSndList);
-  if (iVar1 == 0) {
+  result = sncLinkSndListData(0xf,(sncSOUND_DESCR_3D *)&_aiCyclopSndList);
+  if (result == 0) {
     return 0;
   }
-  aiCYCLOP::pTexScorchMark = txmMANAGER::Add(txmManager,s_sfx_ax_scorch_mark,0x40003,1);
+  aiCYCLOP::pTexScorchMark = txmMANAGER::Add(txmManager, sfx_ax_scorch_mark, 0x40003, 1);
   return (uint)(aiCYCLOP::pTexScorchMark != (txmTEXTURE *)0x0);
 }
 
