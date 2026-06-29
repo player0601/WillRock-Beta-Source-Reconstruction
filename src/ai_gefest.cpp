@@ -1,3 +1,61 @@
+/* from: ai_gefest.cpp
+   addr: 0043D560 */
+
+void aiGefestSndList(void)
+
+{
+  // reuses enemy sound effects
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestSndList, satyr_being_hit, 0, 0x40000, 0.0, 1000);
+  _DAT_0060b568 = 0;
+  _DAT_0060b56c = 0;
+  _aiGefestSndList = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestWalkStep1, cyclop_walk_step_1, 0, 0x40000, 0.0, 0);
+  _DAT_0060b5d0 = 0;
+  _DAT_0060b5d4 = 0;
+  _aiGefestWalkStep1 = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestWalkStep2, cyclop_walk_step_2, 0, 0x40000, 0.0, 0);
+  _DAT_0060b638 = 0;
+  _DAT_0060b63c = 0;
+  _aiGefestWalkStep2 = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestHitGround1, cyclop_hit_ground, 0, 0x40000, 0.0, 1000);
+  _DAT_0060b6a0 = 0;
+  _DAT_0060b6a4 = 0;
+  _aiGefestHitGround1 = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestHitGround2, cyclop_hit_ground, 0, 0x40000, 0.0, 0x514);
+  _DAT_0060b708 = 0;
+  _DAT_0060b70c = 0;
+  _aiGefestHitGround2 = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestRoar, cyclop_roar, 0, 0x40000, 0.0, 1000);
+  _DAT_0060b770 = 0;
+  _DAT_0060b774 = 0;
+  _aiGefestRoar = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestThrow, gladiator_bulava_throw, 0, 0x40000, 0.0, 0);
+  _DAT_0060b7d8 = 0;
+  _DAT_0060b7dc = 0;
+  _aiGefestThrow = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestDeath, cyclop_death, 0, 0x40000, 0.0, 2000);
+  _DAT_0060b840 = 0;
+  _DAT_0060b844 = 0;
+  _aiGefestDeath = &sncSOUND_DESCR_3D::`vftable';
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiGefestPjlFlying, disko_disk_fly, 0, 0x40002, 0.0, 0);
+  _DAT_0060b8a8 = &DAT_42480000;
+  _DAT_0060b8ac = 0x43480000;
+  _aiGefestDiskoFly = &sncSOUND_DESCR_3D::`vftable';
+
+  // could be projectile hit sfx
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiGefestPjlHit, mino_ax_hit, 0, 0, 0.0, 0, 10.0, 65.0);
+  sncSOUND_DESCR_3D::sncSOUND_DESCR_3D((sncSOUND_DESCR_3D *)&_aiGefestPjlHit2, satyr_arrow_hit_body, 0, 0x40000, 0.0, 0, 10.0, 65.0);
+
+  return;
+}
 
 /* from: ai_gefest.cpp
    addr: 0043D790 */
@@ -19,7 +77,7 @@ int aiGefestInit(void)
   if (result == 0) {
     return 0;
   }
-  result = sncLinkSndListData(0xb,(sncSOUND_DESCR_3D *)&DAT_0060b508);
+  result = sncLinkSndListData(0xb,(sncSOUND_DESCR_3D *)&_aiGefestSndList);
   if (result == 0) {
     return 0;
   }
