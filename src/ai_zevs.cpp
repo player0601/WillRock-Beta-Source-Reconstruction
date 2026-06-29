@@ -10,7 +10,7 @@ void aiZevsSndList(void)
   sncSOUND_DESCR *this;
 
   // function is quite strange, bitting/swimming sounds, which dont exist in the beta
-  apNAME::SetName((apNAME *)&_aiZevsSndList,s_zevs_being_hit);
+  apNAME::SetName((apNAME *)&_aiZevsSndList, zevs_being_hit);
   _DAT_0060df4c = 0x40000;
   _DAT_0060df50 = 0;
   _DAT_0060df54 = 0;
@@ -22,7 +22,7 @@ void aiZevsSndList(void)
   _DAT_0060df6c = 0;
   _DAT_0060df08 = &sncSOUND_DESCR_3D::_vftable_;
    
-  apNAME::SetName((apNAME *)&_aiZevsSndDeath,s_zevs_death);
+  apNAME::SetName((apNAME *)&_aiZevsSndDeath, zevs_death);
   _DAT_0060dfb4 = 0x40000;
   _DAT_0060dfb8 = 0;
   _DAT_0060dfbc = 0;
@@ -34,7 +34,7 @@ void aiZevsSndList(void)
   _DAT_0060dfd4 = 0;
   _DAT_0060df70 = &sncSOUND_DESCR_3D::_vftable_;
    
-  apNAME::SetName((apNAME *)&DAT_0060dfdc,s_zevs_swim);
+  apNAME::SetName((apNAME *)&_aiZevsSndSwim, zevs_swim);
   _DAT_0060e01c = 0x40000;
   _DAT_0060e020 = 0;
   _DAT_0060e024 = 0;
@@ -47,7 +47,7 @@ void aiZevsSndList(void)
   _DAT_0060dfd8 = &sncSOUND_DESCR_3D::_vftable_;
 
   // *insert squidward bite gif*
-  apNAME::SetName((apNAME *)&DAT_0060e044,s_zevs_bite);
+  apNAME::SetName((apNAME *)&_aiZevsSndBite, zevs_bite);
   _DAT_0060e084 = 0x40000;
   _DAT_0060e088 = 0;
   _DAT_0060e08c = 0;
