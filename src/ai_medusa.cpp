@@ -2,6 +2,65 @@
 #include "ai_npc_wr_fly.h"
 
 /* from: ai_medusa.cpp
+   addr: 00444980 */
+
+void aiMedusaSndList(void)
+{
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiMedusaSndList, medusa_being_hit, 0, 0x40000, 0.0, 0x5dc);
+  _DAT_0060bfd8 = 0;
+  _DAT_0060bfdc = 0;
+  _aiMedusaSndList = &sncSOUND_DESCR_3D::`vftable`;
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiMedusaSndDeath, medusa_death, 0, 0, 0.0, 0);
+  _DAT_0060c040 = 0;
+  _DAT_0060c044 = 0;
+  _aiMedusaSndDeath = &sncSOUND_DESCR_3D::`vftable`;
+
+  apNAME::SetName((apNAME *)&_aiMedusaSndAttack, medusa_attack);
+  _DAT_0060c08c = 0x80000;
+  _DAT_0060c090 = 0;
+  _DAT_0060c094 = 0;
+  _DAT_0060c098 = 0;
+  _DAT_0060c09c = 0;
+  _DAT_0060c0a0 = 0;
+  _DAT_0060c0a4 = 0;
+  _DAT_0060c0a8 = 0;
+  _DAT_0060c0ac = 0;
+  _aiMedusaSndAttack = &sncSOUND_DESCR_3D::`vftable`;
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiMedusaSndFly, medusa_fly, 0, 0, 0.0, 0);
+  _DAT_0060c110 = 0;
+  _DAT_0060c114 = 0;
+  _aiMedusaSndFly = &sncSOUND_DESCR_3D::`vftable`;
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiMedusaSndPjlFly, medusa_pjl_fly, 0, 0x40002, 0.0, 0);
+  _DAT_0060c178 = 0x41700000;
+  _DAT_0060c17c = 0x428c0000;
+  _aiMedusaSndPjlFly = &sncSOUND_DESCR_3D::`vftable`;
+
+  apNAME::SetName((apNAME *)&_aiMedusaSndPjlHitGround, medusa_pjl_hit_ground);
+
+  _DAT_0060c1c4 = 0;
+  _DAT_0060c1c8 = 0;
+  _DAT_0060c1cc = 0;
+  _DAT_0060c1d0 = 0;
+  _DAT_0060c1d4 = 0;
+  _DAT_0060c1d8 = 0;
+  _DAT_0060c1dc = 0;
+  _DAT_0060c1e0 = 0x41200000;
+  _DAT_0060c1e4 = 0x42820000;
+  _aiMedusaSndPjlHitGround = &sncSOUND_DESCR_3D::`vftable`;
+
+  sncSOUND_DESCR::sncSOUND_DESCR((sncSOUND_DESCR *)&_aiMedusaSndPjlHitBody, medusa_pjl_hit_body, 0, 0x40000, 0.0, 0);
+  _aiMedusaSndPjlHitBody = &sncSOUND_DESCR_3D::`vftable`;
+
+  _DAT_0060c248 = 0x41200000;
+  _DAT_0060c24c = 0x42820000;
+
+  return;
+}
+
+/* from: ai_medusa.cpp
    addr: 00444B10 */
 
 int aiMedusaInit(void)
@@ -17,7 +76,7 @@ int aiMedusaInit(void)
   if (result == 0) {
     return 0;
   }
-  result = sncLinkSndListData(7,(sncSOUND_DESCR_3D *)&DAT_0060bf78);
+  result = sncLinkSndListData(7,(sncSOUND_DESCR_3D *)&_aiMedusaSndList);
   return (uint)(result != 0);
 }
 
