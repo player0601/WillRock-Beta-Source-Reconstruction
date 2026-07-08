@@ -9,7 +9,7 @@ void aiZevsSndList(void)
   undefined4 *puVar3;
   sncSOUND_DESCR *this;
 
-  // function is quite strange, bitting/swimming sounds, which dont exist in the beta
+  // function is quite strange, bitting/swimming sounds
   apNAME::SetName((apNAME *)&_aiZevsSndList, zevs_being_hit);
   _DAT_0060df4c = 0x40000;
   _DAT_0060df50 = 0;
