@@ -1,3 +1,73 @@
+#include "engine/entity.h"
+#include "engine/ent_interact.h"
+#include "engine/physics.h"
+#include "engine/phys_rigid.h"
+#include "engine/anim.h"
+#include "engine/anim_ctrl.h"
+#include "engine/Scene.h"
+#include "engine/scn_domain.h"
+#include "engine/msgaddr.h"
+#include "engine/particle.h"
+#include "engine/txm.h"
+#include "engine/fileio.h"
+#include "engine/rend_drv.h"
+#include "engine/rend_obj.h"
+
+#include "m3d/m3d.h"
+#include "m3d/m3d_math.h"
+#include "m3d/m3d_matr.h"
+#include "m3d/m3d_vect.h"
+#include "m3d/m3d_spl.h"
+#include "m3d/m3d_rand.h"
+#include "m3d/cam.h"
+
+#include "gs/gs_init.h"
+#include "gs/gs_msg.h"
+#include "gs/gs_mp_misc.h"
+#include "gs/gs_mp_client.h"
+#include "gs/gs_mp_server.h"
+#include "gs/gs_sound.h"
+#include "gs/gs_rend.h"
+#include "gs/gs_input.h"
+#include "gs/gs_strings.h"
+#include "gs/gs_cfg.h"
+#include "gs/ui_main.h"
+#include "gs/ui_rnd.h"
+#include "gs/proj_shd.h"
+#include "gs/mirror.h"
+
+#include "gs_shared/water.h"
+#include "gs_shared/weapon.h"
+#include "gs_shared/damage.h"
+#include "gs_shared/dyn_destroy.h"
+#include "gs_shared/ai_ctrl.h"
+#include "gs_shared/item.h"
+
+#include "player.h"
+#include "player_comm.h"
+#include "player_mp.h"
+#include "plgs_action.h"
+#include "plr_height.h"
+#include "plr_cam.h"
+#include "plr_sfx.h"
+#include "pwp_comm.h"
+#include "wr_item.h"
+#include "wr_game_opt.h"
+#include "wr_curs.h"
+#include "sob_trading_altar.h"
+
+#include "sfx_appear.h"
+#include "sfx_blood.h"
+
+#include "ap/ap_comm.h"
+#include "ap/ap_cfg.h"
+#include "ap/ap_mem.h"
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <windows.h>
+
 /* from: player.cpp
    addr: 0041A680 */
 
